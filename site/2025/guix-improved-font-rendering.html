@@ -1,0 +1,38 @@
+<meta itemprop="itemid" content="urn:uuid:1e8d8aab-5d8a-4f1c-ad1c-6f94cb1377d1">
+<meta itemprop="dt-published" content="2025-11-20T18:43:21Z">
+<meta itemprop="p-category" content="Guix">
+
+<h1>Improved font rendering in Guix</h1>
+
+<p class="e-summary"></p>
+
+<div class="e-content">
+
+<p>There is a neat trick to make fonts on Linux look thicker and smoother and sharper. Set the following variable in <code>/etc/environment</code>:</p>
+
+<pre><code>FREETYPE_PROPERTIES="cff:no-stem-darkening=0 cff:darkening-parameters=500,400,1000,350,1500,325,2000,300 autofitter:no-stem-darkening=0 autofitter:darkening-parameters=500,400,1000,350,1500,325,2000,300"</code></pre>
+
+<p><code>FREETYPE_PROPERTIES</code> is set in <code>/etc/environment</code> so that it sticks as a global configuration. You can see the effect in the following screenshots stitched together from before and after applying the configuration:</p>
+
+<figure>
+    <img src="/static/images/font-stem-thickening-before-after-browser.png">
+    <figcaption>Left-hand side - fonts in browser before applying the configuration. Right-hand side - fonts after applying the configuration look thicker and sharper.</figcaption>
+</figure>
+
+<figure>
+    <img src="/static/images/font-stem-thickening-before-after-terminal.png">
+    <figcaption>Left-hand side - fonts in terminal before applying the configuration. Right-hand side - fonts after applying the configuration look thicker and sharper.</figcaption>
+</figure>
+
+<p>I was able to set <code>FREETYPE_PROPERTIES</code> in Guix with the help of a great tip from <a href="https://lists.gnu.org/archive/html/help-guix/2020-12/msg00237.html">Lo Peter</a> on how to set a global environment variable in a Guix system.</p>
+
+<p>Here is the final configuration, to be put in the Guix system's configuration file (I call it <code>os.scm</code>).</p>
+
+<pre><code>(operating-system
+ (services
+  (cons*
+   (simple-service
+    'global-environment-variables
+    session-environment-service-type
+    '(("FREETYPE_PROPERTIES" . "cff:no-stem-darkening=0 cff:darkening-parameters=500,400,1000,350,1500,325,2000,300 autofitter:no-stem-darkening=0 autofitter:darkening-parameters=500,400,1000,350,1500,325,2000,300"))))))</code></pre>
+</div>
