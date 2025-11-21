@@ -16,7 +16,7 @@ select {
 
 :root {
     --font-monospace: 'Cascadia Mono', monospace;
-    --font-sans: Epunda Sans, Lexend, Asap, "Atkinson Hyperlegible", sans-serif;
+    --font-sans: "Atkinson Hyperlegible", Lexend, Asap, sans-serif;
     --font-serif: Merriweather, Georgia, serif;
 
     /*

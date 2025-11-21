@@ -8,26 +8,26 @@ src: https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight  */
 
 @font-face {
   font-display: swap;
-  font-family: 'Lexend';
+  font-family: 'Atkinson Hyperlegible';
   font-style: normal;
   /* 100 900 => the font supports weights between 100 and 900. */
   font-weight: 100 900;
-  src: url('/static/fonts/Lexend/Lexend-Variable.ttf') format('truetype');
+  src: url('/static/fonts/AtkinsonHyperlegibleNext/AtkinsonHyperlegibleNext-Variable.woff2') format('woff2');
 }
 
 @font-face {
   font-display: swap;
-  font-family: 'Lexend';
+  font-family: 'Atkinson Hyperlegible';
   font-style: italic;
   font-weight: 100 900;
-  src: url('/static/fonts/Lexend/Lexend-Variable.ttf') format('truetype');
+  src: url('/static/fonts/AtkinsonHyperlegibleNext/AtkinsonHyperlegibleNext-Variable.woff2') format('woff2');
 }
 
 @font-face {
   font-display: swap;
   font-family: 'Cascadia Mono';
   font-style: normal;
-  font-weight: 400;
+  font-weight: 100 900;
   src: url('/static/fonts/CascadiaMono/CascadiaMono-Variable.woff2') format('woff2');
 }
 
@@ -35,6 +35,6 @@ src: https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight  */
   font-display: swap;
   font-family: 'Cascadia Code';
   font-style: italic;
-  font-weight: 400;
+  font-weight: 100 900;
   src: url('/static/fonts/CascadiaMono/CascadiaMonoItalic-Variable.woff2') format('woff2');
 }
