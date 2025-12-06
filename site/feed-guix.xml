@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <feed xmlns="http://www.w3.org/2005/Atom">
+      <id>https://bhoot.dev/</id>
+      <title>Jayesh Bhoot's Ghost Town – All Posts</title>
+      <updated>2025-11-20T18:43:21.000Z</updated>
+      <author>
+        <name>Jayesh Bhoot</name>
+      </author>
+      <link href="https://bhoot.dev/feed.xml" rel="self"/>
+      <entry>
+      <id>urn:uuid:1e8d8aab-5d8a-4f1c-ad1c-6f94cb1377d1</id>
+      <title type="html">Improved font rendering in Guix</title>
+      <updated>2025-11-20T18:43:21.000Z</updated>
+      <author>
+        <name>Jayesh Bhoot</name>
+      </author>
+      <content type="html">&lt;p&gt;There is a neat trick to make fonts on Linux look thicker and smoother and sharper. Set the following variable in &lt;code&gt;/etc/environment&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;FREETYPE_PROPERTIES=&quot;cff:no-stem-darkening=0 cff:darkening-parameters=500,400,1000,350,1500,325,2000,300 autofitter:no-stem-darkening=0 autofitter:darkening-parameters=500,400,1000,350,1500,325,2000,300&quot;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;FREETYPE_PROPERTIES&lt;/code&gt; is set in &lt;code&gt;/etc/environment&lt;/code&gt; so that it sticks as a global configuration. You can see the effect in the following screenshots stitched together from before and after applying the configuration:&lt;/p&gt;
+
+&lt;figure&gt;
+    &lt;img src=&quot;/static/images/font-stem-thickening-before-after-browser.png&quot;&gt;
+    &lt;figcaption&gt;Left-hand side - fonts in browser before applying the configuration. Right-hand side - fonts after applying the configuration look thicker and sharper.&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;figure&gt;
+    &lt;img src=&quot;/static/images/font-stem-thickening-before-after-terminal.png&quot;&gt;
+    &lt;figcaption&gt;Left-hand side - fonts in terminal before applying the configuration. Right-hand side - fonts after applying the configuration look thicker and sharper.&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;I was able to set &lt;code&gt;FREETYPE_PROPERTIES&lt;/code&gt; in Guix with the help of a great tip from &lt;a href=&quot;https://lists.gnu.org/archive/html/help-guix/2020-12/msg00237.html&quot;&gt;Lo Peter&lt;/a&gt; on how to set a global environment variable in a Guix system.&lt;/p&gt;
+
+&lt;p&gt;Here is the final configuration, to be put in the Guix system&#39;s configuration file (I call it &lt;code&gt;os.scm&lt;/code&gt;).&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(operating-system
+ (services
+  (cons*
+   (simple-service
+    &#39;global-environment-variables
+    session-environment-service-type
+    &#39;((&quot;FREETYPE_PROPERTIES&quot; . &quot;cff:no-stem-darkening=0 cff:darkening-parameters=500,400,1000,350,1500,325,2000,300 autofitter:no-stem-darkening=0 autofitter:darkening-parameters=500,400,1000,350,1500,325,2000,300&quot;))))))&lt;/code&gt;&lt;/pre&gt;</content>
+      <link href="/2025/guix-improved-font-rendering"/>
+      <summary type="html">There is a neat trick to make fonts on Linux look thicker and smoother and sharper. Set the following variable in &lt;code&gt;/etc/environment&lt;/code&gt;:</summary>
+      <category term="Guix" label="Guix" />
+      <published>2025-11-20T18:43:21.000Z</published>
+    </entry>
+    </feed>
