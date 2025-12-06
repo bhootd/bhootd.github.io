@@ -1,20 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-  <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://bhoot.dev/</id>
-    <title>Jayesh Bhoot's Ghost Town – All Posts</title>
-    <updated>2025-07-01T05:57:08.000Z</updated>
-    <author>
-      <name>Jayesh Bhoot</name>
-    </author>
-    <link href="https://bhoot.dev/feed.xml" rel="self"/>
-    <entry>
-    <id>urn:uuid:2dbf4fe5-f920-4571-9dec-d1703eb63c7e</id>
-    <title type="html">&lt;code&gt;git stage&lt;/code&gt; over &lt;code&gt;git add&lt;/code&gt;</title>
-    <updated>2025-07-01T05:57:08.000Z</updated>
-    <author>
-      <name>Jayesh Bhoot</name>
-    </author>
-    <content type="html">&lt;p&gt;I&#39;ve come to prefer &lt;code&gt;git stage&lt;/code&gt; to &lt;code&gt;git add&lt;/code&gt;. The former is a synonym of latter, but makes the intent clearer.
+    <feed xmlns="http://www.w3.org/2005/Atom">
+      <id>https://bhoot.dev/</id>
+      <title>Jayesh Bhoot's Ghost Town – All Posts</title>
+      <updated>2025-11-20T18:43:21.000Z</updated>
+      <author>
+        <name>Jayesh Bhoot</name>
+      </author>
+      <link href="https://bhoot.dev/feed.xml" rel="self"/>
+      <entry>
+      <id>urn:uuid:1e8d8aab-5d8a-4f1c-ad1c-6f94cb1377d1</id>
+      <title type="html">Improved font rendering in Guix</title>
+      <updated>2025-11-20T18:43:21.000Z</updated>
+      <author>
+        <name>Jayesh Bhoot</name>
+      </author>
+      <content type="html">&lt;p&gt;There is a neat trick to make fonts on Linux look thicker and smoother and sharper. Set the following variable in &lt;code&gt;/etc/environment&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;FREETYPE_PROPERTIES=&quot;cff:no-stem-darkening=0 cff:darkening-parameters=500,400,1000,350,1500,325,2000,300 autofitter:no-stem-darkening=0 autofitter:darkening-parameters=500,400,1000,350,1500,325,2000,300&quot;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;FREETYPE_PROPERTIES&lt;/code&gt; is set in &lt;code&gt;/etc/environment&lt;/code&gt; so that it sticks as a global configuration. You can see the effect in the following screenshots stitched together from before and after applying the configuration:&lt;/p&gt;
+
+&lt;figure&gt;
+    &lt;img src=&quot;/static/images/font-stem-thickening-before-after-browser.png&quot;&gt;
+    &lt;figcaption&gt;Left-hand side - fonts in browser before applying the configuration. Right-hand side - fonts after applying the configuration look thicker and sharper.&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;figure&gt;
+    &lt;img src=&quot;/static/images/font-stem-thickening-before-after-terminal.png&quot;&gt;
+    &lt;figcaption&gt;Left-hand side - fonts in terminal before applying the configuration. Right-hand side - fonts after applying the configuration look thicker and sharper.&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;I was able to set &lt;code&gt;FREETYPE_PROPERTIES&lt;/code&gt; in Guix with the help of a great tip from &lt;a href=&quot;https://lists.gnu.org/archive/html/help-guix/2020-12/msg00237.html&quot;&gt;Lo Peter&lt;/a&gt; on how to set a global environment variable in a Guix system.&lt;/p&gt;
+
+&lt;p&gt;Here is the final configuration, to be put in the Guix system&#39;s configuration file (I call it &lt;code&gt;os.scm&lt;/code&gt;).&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(operating-system
+ (services
+  (cons*
+   (simple-service
+    &#39;global-environment-variables
+    session-environment-service-type
+    &#39;((&quot;FREETYPE_PROPERTIES&quot; . &quot;cff:no-stem-darkening=0 cff:darkening-parameters=500,400,1000,350,1500,325,2000,300 autofitter:no-stem-darkening=0 autofitter:darkening-parameters=500,400,1000,350,1500,325,2000,300&quot;))))))&lt;/code&gt;&lt;/pre&gt;</content>
+      <link href="/2025/guix-improved-font-rendering"/>
+      <summary type="html">There is a neat trick to make fonts on Linux look thicker and smoother and sharper. Set the following variable in &lt;code&gt;/etc/environment&lt;/code&gt;:</summary>
+      <category term="Guix" label="Guix" />
+      <published>2025-11-20T18:43:21.000Z</published>
+    </entry>
+<entry>
+      <id>urn:uuid:2dbf4fe5-f920-4571-9dec-d1703eb63c7e</id>
+      <title type="html">&lt;code&gt;git stage&lt;/code&gt; over &lt;code&gt;git add&lt;/code&gt;</title>
+      <updated>2025-07-01T05:57:08.000Z</updated>
+      <author>
+        <name>Jayesh Bhoot</name>
+      </author>
+      <content type="html">&lt;p&gt;I&#39;ve come to prefer &lt;code&gt;git stage&lt;/code&gt; to &lt;code&gt;git add&lt;/code&gt;. The former is a synonym of latter, but makes the intent clearer.
 
 &lt;/p&gt;&lt;p&gt;&lt;code&gt;man git-add&lt;/code&gt; says:
 
@@ -30,19 +69,19 @@
 
 &lt;/p&gt;&lt;p&gt;As usual, feel free to shine a light on any ignorance on my part.
 &lt;/p&gt;</content>
-    <link href="/2025/git-stage-over-git-add"/>
-    <summary type="html">I&#39;ve come to prefer &lt;code&gt;git stage&lt;/code&gt; to &lt;code&gt;git add&lt;/code&gt;. The former is a synonym of latter, but makes the intent clearer.</summary>
-    <category term="Git" label="Git" />
-    <published>2025-07-01T05:57:08.000Z</published>
-  </entry>
+      <link href="/2025/git-stage-over-git-add"/>
+      <summary type="html">I&#39;ve come to prefer &lt;code&gt;git stage&lt;/code&gt; to &lt;code&gt;git add&lt;/code&gt;. The former is a synonym of latter, but makes the intent clearer.</summary>
+      <category term="Git" label="Git" />
+      <published>2025-07-01T05:57:08.000Z</published>
+    </entry>
 <entry>
-    <id>urn:uuid:a9c1d360-42ac-4909-9598-720bccce7166</id>
-    <title type="html">On Stephen Baxter&#39;s Manifold books</title>
-    <updated>2025-06-20T09:57:32.000Z</updated>
-    <author>
-      <name>Jayesh Bhoot</name>
-    </author>
-    <content type="html">&lt;p&gt;So I finished Stephen Baxter&#39;s &lt;a href=&quot;https://www.goodreads.com/series/297804-world-engines&quot;&gt;World Engines&lt;/a&gt; duology yesterday. I have some thoughts.&lt;/p&gt;
+      <id>urn:uuid:a9c1d360-42ac-4909-9598-720bccce7166</id>
+      <title type="html">On Stephen Baxter&#39;s Manifold books</title>
+      <updated>2025-06-20T09:57:32.000Z</updated>
+      <author>
+        <name>Jayesh Bhoot</name>
+      </author>
+      <content type="html">&lt;p&gt;So I finished Stephen Baxter&#39;s &lt;a href=&quot;https://www.goodreads.com/series/297804-world-engines&quot;&gt;World Engines&lt;/a&gt; duology yesterday. I have some thoughts.&lt;/p&gt;
 
     &lt;p&gt;Setting aside its excruciatingly slow pace, it neatly ties back to Baxter&#39;s another series — the &lt;a href=&quot;https://www.goodreads.com/series/49783-manifold&quot;&gt;Manifold trilogy&lt;/a&gt;.&lt;/p&gt;
 
@@ -73,35 +112,35 @@
     &lt;p&gt;Such a grand concept, muted by weak characters and uninteresting and slow writing.&lt;/p&gt;
 
     &lt;p&gt;I think its time for me to take a break from Baxter. I cherish his &lt;a href=&quot;https://www.goodreads.com/book/show/2111634.Flood?ref=nav_sb_noss_l_13&quot;&gt;Flood&lt;/a&gt;, &lt;a href=&quot;https://www.goodreads.com/book/show/2111628.Ark?ref=nav_sb_noss_l_10&quot;&gt;Ark&lt;/a&gt;, &lt;a href=&quot;https://www.goodreads.com/book/show/25123838-landfall?ref=nav_sb_ss_1_14&quot;&gt;Landfall&lt;/a&gt; trilogy. I think his &lt;a href=&quot;https://www.goodreads.com/book/show/66792.Evolution&quot;&gt;Evolution&lt;/a&gt; should be a part of our school curriculum. But I cannot, for the life of me, slog through his recent novels anymore.&lt;/p&gt;</content>
-    <link href="/2025/stephen-baxter-manifold"/>
-    <summary type="html">So I finished Stephen Baxter&#39;s &lt;a href=&quot;https://www.goodreads.com/series/297804-world-engines&quot;&gt;World Engines&lt;/a&gt; duology yesterday. I have some thoughts.</summary>
-    <category term="Books" label="Books" />
-    <published>2025-06-20T09:57:32.000Z</published>
-  </entry>
+      <link href="/2025/stephen-baxter-manifold"/>
+      <summary type="html">So I finished Stephen Baxter&#39;s &lt;a href=&quot;https://www.goodreads.com/series/297804-world-engines&quot;&gt;World Engines&lt;/a&gt; duology yesterday. I have some thoughts.</summary>
+      <category term="Books" label="Books" />
+      <published>2025-06-20T09:57:32.000Z</published>
+    </entry>
 <entry>
-    <id>urn:uuid:6bd4c2e3-ce4d-47c1-afa1-61cca1d51df5</id>
-    <title type="html">Tip for my future self: If Emacs throws an arcane error — &lt;code&gt;project--read-file-name: Wrong type argument: stringp, nil&lt;/code&gt; — while trying to find a file in a git project (&lt;code&gt;C-x p f&lt;/code&gt;), then one likely reason is that the git project is empty.</title>
-    <updated>2025-05-15T07:26:35.000Z</updated>
-    <author>
-      <name>Jayesh Bhoot</name>
-    </author>
-    <content type="html">&lt;p&gt;Tip for my future self: If Emacs throws an arcane error — &lt;code&gt;project--read-file-name: Wrong type argument: stringp, nil&lt;/code&gt; — while trying to find a file in a git project (&lt;code&gt;C-x p f&lt;/code&gt;), then one likely reason is that the git project is empty.&lt;/p&gt;
+      <id>urn:uuid:6bd4c2e3-ce4d-47c1-afa1-61cca1d51df5</id>
+      <title type="html">Tip for my future self: If Emacs throws an arcane error — &lt;code&gt;project--read-file-name: Wrong type argument: stringp, nil&lt;/code&gt; — while trying to find a file in a git project (&lt;code&gt;C-x p f&lt;/code&gt;), then one likely reason is that the git project is empty.</title>
+      <updated>2025-05-15T07:26:35.000Z</updated>
+      <author>
+        <name>Jayesh Bhoot</name>
+      </author>
+      <content type="html">&lt;p&gt;Tip for my future self: If Emacs throws an arcane error — &lt;code&gt;project--read-file-name: Wrong type argument: stringp, nil&lt;/code&gt; — while trying to find a file in a git project (&lt;code&gt;C-x p f&lt;/code&gt;), then one likely reason is that the git project is empty.&lt;/p&gt;
 
   &lt;p&gt;Solution? Make sure you have something inside the git project. Even a staged file is enough.&lt;/p&gt;</content>
-    <link href="/2025/emacs-fit-at-empty-git-project"/>
-    <summary type="html">Tip for my future self: If Emacs throws an arcane error — &lt;code&gt;project--read-file-name: Wrong type argument: stringp, nil&lt;/code&gt; — while trying to find a file in a git project (&lt;code&gt;C-x p f&lt;/code&gt;), then one likely reason is that the git project is empty.</summary>
-    <category term="Emacs" label="Emacs" />
+      <link href="/2025/emacs-fit-at-empty-git-project"/>
+      <summary type="html">Tip for my future self: If Emacs throws an arcane error — &lt;code&gt;project--read-file-name: Wrong type argument: stringp, nil&lt;/code&gt; — while trying to find a file in a git project (&lt;code&gt;C-x p f&lt;/code&gt;), then one likely reason is that the git project is empty.</summary>
+      <category term="Emacs" label="Emacs" />
 <category term="Note" label="Note" />
-    <published>2025-05-15T07:26:35.000Z</published>
-  </entry>
+      <published>2025-05-15T07:26:35.000Z</published>
+    </entry>
 <entry>
-    <id>urn:uuid:8817051d-2e10-41af-93a0-dde98191db22</id>
-    <title type="html">How I configured OS-specific fonts in Emacs</title>
-    <updated>2025-04-22T19:40:38.000Z</updated>
-    <author>
-      <name>Jayesh Bhoot</name>
-    </author>
-    <content type="html">&lt;p&gt;Here is the &lt;i&gt;Elisp&lt;/i&gt; snippet:&lt;/p&gt;
+      <id>urn:uuid:8817051d-2e10-41af-93a0-dde98191db22</id>
+      <title type="html">How I configured OS-specific fonts in Emacs</title>
+      <updated>2025-04-22T19:40:38.000Z</updated>
+      <author>
+        <name>Jayesh Bhoot</name>
+      </author>
+      <content type="html">&lt;p&gt;Here is the &lt;i&gt;Elisp&lt;/i&gt; snippet:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;(let ((font-value (cond
                    ((eq system-type &#39;gnu/linux)
@@ -122,19 +161,19 @@
 &lt;/ol&gt;
 
 &lt;p&gt;I am sure there is a better way, but I have only recently started tinkering with Emacs and ELisp. I mean I still nest a &lt;i&gt;sexp&lt;/i&gt; by manually adding parentheses before and after the &lt;i&gt;sexp&lt;/i&gt;, like a caveman!&lt;/p&gt;</content>
-    <link href="/2025/emacs-font-per-os"/>
-    <summary type="html">Here is the &lt;i&gt;Elisp&lt;/i&gt; snippet:</summary>
-    <category term="emacs" label="emacs" />
-    <published>2025-04-22T19:40:38.000Z</published>
-  </entry>
+      <link href="/2025/emacs-font-per-os"/>
+      <summary type="html">Here is the &lt;i&gt;Elisp&lt;/i&gt; snippet:</summary>
+      <category term="emacs" label="emacs" />
+      <published>2025-04-22T19:40:38.000Z</published>
+    </entry>
 <entry>
-    <id>urn:uuid:ca9a7210-3a69-4623-b308-17ec68d921b9</id>
-    <title type="html">A case of unsoundness in TypeScript</title>
-    <updated>2025-03-26T10:08:33.000Z</updated>
-    <author>
-      <name>Jayesh Bhoot</name>
-    </author>
-    <content type="html">&lt;p&gt;TypeScript provides a construct called a &lt;a href=&quot;https://www.typescriptlang.org/docs/handbook/2/functions.html#call-signatures&quot;&gt;&lt;i&gt;call signature&lt;/i&gt;&lt;/a&gt; to annotate a callable object with properties in JavaScript. For example, think of a function &lt;code&gt;identity&lt;/code&gt;, i.e., a callable object, with a property &lt;code&gt;whoAmI&lt;/code&gt;:&lt;/p&gt;
+      <id>urn:uuid:ca9a7210-3a69-4623-b308-17ec68d921b9</id>
+      <title type="html">A case of unsoundness in TypeScript</title>
+      <updated>2025-03-26T10:08:33.000Z</updated>
+      <author>
+        <name>Jayesh Bhoot</name>
+      </author>
+      <content type="html">&lt;p&gt;TypeScript provides a construct called a &lt;a href=&quot;https://www.typescriptlang.org/docs/handbook/2/functions.html#call-signatures&quot;&gt;&lt;i&gt;call signature&lt;/i&gt;&lt;/a&gt; to annotate a callable object with properties in JavaScript. For example, think of a function &lt;code&gt;identity&lt;/code&gt;, i.e., a callable object, with a property &lt;code&gt;whoAmI&lt;/code&gt;:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;function identity(arg) {
   return arg;
@@ -169,19 +208,19 @@ i.whoAmI = &quot;I am Identity!&quot;;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;I don&#39;t see a reason why TypeScript cannot ensure that any reference to the non-existent components of a half-constructed callable is illegal until the callable is fully constructed...except for performance reasons. Performance is also why TypeScript does not infer paramter types of a function automatically even though it lets you infer their types, individually, on-demand, through IDE tooling.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://lobste.rs/s/tjhvij/understanding_various_syntaxes#c_kvjlso&quot;&gt;Link to the conversation thread that led to this post.&lt;/a&gt;&lt;/p&gt;</content>
-    <link href="/2025/typescript-usecase-over-soundness"/>
-    <summary type="html">Defining a function declaration with properties requires more than one statement. This provides a way to break the type system of TypeScript.</summary>
-    <category term="TypeScript" label="TypeScript" />
-    <published>2025-03-26T10:08:33.000Z</published>
-  </entry>
+      <link href="/2025/typescript-usecase-over-soundness"/>
+      <summary type="html">Defining a function declaration with properties requires more than one statement. This provides a way to break the type system of TypeScript.</summary>
+      <category term="TypeScript" label="TypeScript" />
+      <published>2025-03-26T10:08:33.000Z</published>
+    </entry>
 <entry>
-    <id>urn:uuid:ec62eb12-2d90-4b29-9d7d-57774f038d8c</id>
-    <title type="html">Understanding various syntaxes to annotate a function&#39;s type in TypeScript</title>
-    <updated>2025-03-21T10:34:21.000Z</updated>
-    <author>
-      <name>Jayesh Bhoot</name>
-    </author>
-    <content type="html">&lt;h2 id=&quot;the-underlying-principles&quot;&gt;The underlying principles&lt;/h2&gt;
+      <id>urn:uuid:ec62eb12-2d90-4b29-9d7d-57774f038d8c</id>
+      <title type="html">Understanding various syntaxes to annotate a function&#39;s type in TypeScript</title>
+      <updated>2025-03-21T10:34:21.000Z</updated>
+      <author>
+        <name>Jayesh Bhoot</name>
+      </author>
+      <content type="html">&lt;h2 id=&quot;the-underlying-principles&quot;&gt;The underlying principles&lt;/h2&gt;
 
 &lt;p&gt;I was able to boil it all down to the following:&lt;/p&gt;
 
@@ -349,19 +388,19 @@ identity.whoAmI = &quot;I am identity man&quot;;
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;This syntax leaves room to create an unsound use case, as &lt;a href=&quot;/2025/typescript-usecase-over-soundness/&quot;&gt;explained in a later post&lt;/a&gt;.&lt;/p&gt;</content>
-    <link href="/2025/typescript-function-type-syntaxes"/>
-    <summary type="html">I often found myself second guessing while writing type annotations for TypeScript functions. To make it intuitive in future, I try to make sense of various syntaxes TypeScript provides in order to annotate functions.</summary>
-    <category term="TypeScript" label="TypeScript" />
-    <published>2025-03-21T10:34:21.000Z</published>
-  </entry>
+      <link href="/2025/typescript-function-type-syntaxes"/>
+      <summary type="html">I often found myself second guessing while writing type annotations for TypeScript functions. To make it intuitive in future, I try to make sense of various syntaxes TypeScript provides in order to annotate functions.</summary>
+      <category term="TypeScript" label="TypeScript" />
+      <published>2025-03-21T10:34:21.000Z</published>
+    </entry>
 <entry>
-    <id>urn:uuid:f13619df-46e0-4bac-8ca0-25497a183534</id>
-    <title type="html">JavaScript function declaration v/s arrow function in a browser console</title>
-    <updated>2025-03-20T13:33:12.000Z</updated>
-    <author>
-      <name>Jayesh Bhoot</name>
-    </author>
-    <content type="html">&lt;p&gt;I often like to develop and test small JavaScript code directly in a browser console.&lt;/p&gt;
+      <id>urn:uuid:f13619df-46e0-4bac-8ca0-25497a183534</id>
+      <title type="html">JavaScript function declaration v/s arrow function in a browser console</title>
+      <updated>2025-03-20T13:33:12.000Z</updated>
+      <author>
+        <name>Jayesh Bhoot</name>
+      </author>
+      <content type="html">&lt;p&gt;I often like to develop and test small JavaScript code directly in a browser console.&lt;/p&gt;
 
 &lt;p&gt;In this environment, a function declaration has an advantage over an arrow function – I can re-define &amp;amp; re-run a function declaration repeatedly in a browser&#39;s console.&lt;/p&gt;
 
@@ -387,19 +426,19 @@ identity.whoAmI = &quot;I am identity man&quot;;
 
 &amp;gt;&amp;gt; const strIdentity = v =&amp;gt; v.toUpperCase();
 &lt;samp style=&quot;color: red;&quot;&gt;Uncaught SyntaxError: redeclaration of const strIdentity&lt;/samp&gt;&lt;/code&gt;&lt;/pre&gt;</content>
-    <link href="/2025/function-vs-arrow"/>
-    <summary type="html">Apart from the usual conciseness and &lt;code&gt;this&lt;/code&gt; arguments, JavaScript&#39;s function declaration and arrow functions differ in another practical way.</summary>
-    <category term="JavaScript" label="JavaScript" />
-    <published>2025-03-20T13:33:12.000Z</published>
-  </entry>
+      <link href="/2025/function-vs-arrow"/>
+      <summary type="html">Apart from the usual conciseness and &lt;code&gt;this&lt;/code&gt; arguments, JavaScript&#39;s function declaration and arrow functions differ in another practical way.</summary>
+      <category term="JavaScript" label="JavaScript" />
+      <published>2025-03-20T13:33:12.000Z</published>
+    </entry>
 <entry>
-    <id>urn:uuid:efdac3b9-aaec-4f39-8629-1ebf5c8af173</id>
-    <title type="html">Someone&#39;s high hopes- to dash or not to dash</title>
-    <updated>2025-03-06T12:13:15.000Z</updated>
-    <author>
-      <name>Jayesh Bhoot</name>
-    </author>
-    <content type="html">&lt;p&gt;Someone close to you is brimming with optimism – that something they are anticipating is going to transpire in their favour. They have rationalised all related events to point to their success. Be it a test, an interview,  a pregnancy test, or whatever.&lt;/p&gt;
+      <id>urn:uuid:efdac3b9-aaec-4f39-8629-1ebf5c8af173</id>
+      <title type="html">Someone&#39;s high hopes- to dash or not to dash</title>
+      <updated>2025-03-06T12:13:15.000Z</updated>
+      <author>
+        <name>Jayesh Bhoot</name>
+      </author>
+      <content type="html">&lt;p&gt;Someone close to you is brimming with optimism – that something they are anticipating is going to transpire in their favour. They have rationalised all related events to point to their success. Be it a test, an interview,  a pregnancy test, or whatever.&lt;/p&gt;
 
 &lt;p&gt;You, having witnessed several such cycles of hope and disappointment by now, feel an urge – an urge as high as their high hopes – to temper this optimism. What do you do?&lt;/p&gt;
 
@@ -454,19 +493,19 @@ identity.whoAmI = &quot;I am identity man&quot;;
 &lt;p&gt;The catch is that you can&#39;t just look hopeful for the sake of it. You have to &lt;em&gt;feel&lt;/em&gt; it. Otherwise, having had to hide your true feelings, you run the risk of feeling frustrated yourself!&lt;/p&gt;
 
 &lt;p&gt;Of course, the worst case is that you are overcome with the sentiment of &lt;em&gt;I told you so&lt;/em&gt;.&lt;/p&gt;</content>
-    <link href="/2025/high-hopes-to-dash-or-not"/>
-    <summary type="html">That is the question.</summary>
-    <category term="Philosophy of life" label="Philosophy of life" />
-    <published>2025-03-06T12:13:15.000Z</published>
-  </entry>
+      <link href="/2025/high-hopes-to-dash-or-not"/>
+      <summary type="html">That is the question.</summary>
+      <category term="Philosophy of life" label="Philosophy of life" />
+      <published>2025-03-06T12:13:15.000Z</published>
+    </entry>
 <entry>
-    <id>urn:uuid:87e3da7a-67f9-465e-bed1-261e46774e4b</id>
-    <title type="html">Copying &lt;em&gt;all&lt;/em&gt; files of a directory, including hidden ones, with &lt;code&gt;cp&lt;/code&gt;</title>
-    <updated>2025-02-20T17:15:58.000Z</updated>
-    <author>
-      <name>Jayesh Bhoot</name>
-    </author>
-    <content type="html">&lt;p&gt;There are two directories - a non-empty &lt;code&gt;src&lt;/code&gt; and an empty &lt;code&gt;dest&lt;/code&gt;. My &lt;strong&gt;aim&lt;/strong&gt; is to copy all the files in &lt;code&gt;src&lt;/code&gt; inside &lt;code&gt;dest&lt;/code&gt;, including hidden files.&lt;/p&gt;
+      <id>urn:uuid:87e3da7a-67f9-465e-bed1-261e46774e4b</id>
+      <title type="html">Copying &lt;em&gt;all&lt;/em&gt; files of a directory, including hidden ones, with &lt;code&gt;cp&lt;/code&gt;</title>
+      <updated>2025-02-20T17:15:58.000Z</updated>
+      <author>
+        <name>Jayesh Bhoot</name>
+      </author>
+      <content type="html">&lt;p&gt;There are two directories - a non-empty &lt;code&gt;src&lt;/code&gt; and an empty &lt;code&gt;dest&lt;/code&gt;. My &lt;strong&gt;aim&lt;/strong&gt; is to copy all the files in &lt;code&gt;src&lt;/code&gt; inside &lt;code&gt;dest&lt;/code&gt;, including hidden files.&lt;/p&gt;
 
 &lt;figure&gt;
 &lt;pre&gt;&lt;code&gt;$ ls -a src&lt;/code&gt;
@@ -526,20 +565,20 @@ identity.whoAmI = &quot;I am identity man&quot;;
 
 &lt;p&gt;In general, I have seen more use for ChatGPT to produce stuff which I have the knowledge and capability to cross-verify. For learning new stuff, original documentation and books are still the king. &lt;/p&gt;
 &lt;/aside&gt;</content>
-    <link href="/2025/cp-dot-copies-everything"/>
-    <summary type="html">I outline my exploration of why &lt;code&gt;cp -R src/. dest&lt;/code&gt; copies contents of &lt;code&gt;src&lt;/code&gt; – that too &lt;em&gt;all&lt;/em&gt; its files, including hidden ones – and not &lt;code&gt;src&lt;/code&gt; itself, as &lt;code&gt;src/.&lt;/code&gt; had initially led me to believe. This is because of how the algorithm of &lt;code&gt;cp&lt;/code&gt; is defined.</summary>
-    <category term="Linux" label="Linux" />
+      <link href="/2025/cp-dot-copies-everything"/>
+      <summary type="html">I outline my exploration of why &lt;code&gt;cp -R src/. dest&lt;/code&gt; copies contents of &lt;code&gt;src&lt;/code&gt; – that too &lt;em&gt;all&lt;/em&gt; its files, including hidden ones – and not &lt;code&gt;src&lt;/code&gt; itself, as &lt;code&gt;src/.&lt;/code&gt; had initially led me to believe. This is because of how the algorithm of &lt;code&gt;cp&lt;/code&gt; is defined.</summary>
+      <category term="Linux" label="Linux" />
 <category term="RHCSA" label="RHCSA" />
-    <published>2025-02-20T17:15:58.000Z</published>
-  </entry>
+      <published>2025-02-20T17:15:58.000Z</published>
+    </entry>
 <entry>
-    <id>urn:uuid:8f8baebb-e7b1-4127-b8af-de3d3a944224</id>
-    <title type="html">Proximity of an error in static and dynamic languages</title>
-    <updated>2025-02-19T14:09:43.000Z</updated>
-    <author>
-      <name>Jayesh Bhoot</name>
-    </author>
-    <content type="html">&lt;p&gt;&lt;a href=&quot;https://news.ycombinator.com/item?id=43092003#43098447&quot;&gt;A thread on Hacker news&lt;/a&gt; got me thinking today. The debate was around type validation. I wrote the following there.&lt;/p&gt;
+      <id>urn:uuid:8f8baebb-e7b1-4127-b8af-de3d3a944224</id>
+      <title type="html">Proximity of an error in static and dynamic languages</title>
+      <updated>2025-02-19T14:09:43.000Z</updated>
+      <author>
+        <name>Jayesh Bhoot</name>
+      </author>
+      <content type="html">&lt;p&gt;&lt;a href=&quot;https://news.ycombinator.com/item?id=43092003#43098447&quot;&gt;A thread on Hacker news&lt;/a&gt; got me thinking today. The debate was around type validation. I wrote the following there.&lt;/p&gt;
 
 &lt;blockquote cite=&quot;https://news.ycombinator.com/item?id=43092003#43098447&quot;&gt;
 &lt;p&gt;...point is that a bad payload will fail right at the serialisation boundary in case of .NET. We know the problem right there. Now we only need to fix the bad payload.&lt;/p&gt;
@@ -770,19 +809,19 @@ hello1
 &lt;p&gt;I should note that this post is more a thought vomit than a claim of what is better or worse. When I started writing, I only had the first section - &lt;em&gt;the two tests of an error&lt;/em&gt; - in mind. I am neither glorifying Scala, not bashing TypeScript or JavaScript. I recognise that having to explicitly add serialisation is probably not a dealbreaker. I also recognise that all statically-typed langauges may not even support implicit serialisation (but probably do mandate serialisation).&lt;/p&gt;
 
 &lt;p&gt;That&#39;s all.&lt;/p&gt;</content>
-    <link href="/2025/proximity-of-an-error"/>
-    <summary type="html">This is a purely conjectural, anecdotal, probably biased post on how statically-typed languages do better than dynamically-typed languages in keeping an error as close to the source issue as possible.</summary>
-    <category term="Philosophy of software design" label="Philosophy of software design" />
-    <published>2025-02-19T14:09:43.000Z</published>
-  </entry>
+      <link href="/2025/proximity-of-an-error"/>
+      <summary type="html">This is a purely conjectural, anecdotal, probably biased post on how statically-typed languages do better than dynamically-typed languages in keeping an error as close to the source issue as possible.</summary>
+      <category term="Philosophy of software design" label="Philosophy of software design" />
+      <published>2025-02-19T14:09:43.000Z</published>
+    </entry>
 <entry>
-    <id>urn:uuid:43f46500-f269-4e3b-82e0-e4723df60e63</id>
-    <title type="html">Design Rework #1 - reworking my university hoarding</title>
-    <updated>2025-02-17T10:14:23.000Z</updated>
-    <author>
-      <name>Jayesh Bhoot</name>
-    </author>
-    <content type="html">&lt;h2 id=&quot;original-hoarding&quot;&gt;Original hoarding&lt;/h2&gt;
+      <id>urn:uuid:43f46500-f269-4e3b-82e0-e4723df60e63</id>
+      <title type="html">Design Rework #1 - reworking my university hoarding</title>
+      <updated>2025-02-17T10:14:23.000Z</updated>
+      <author>
+        <name>Jayesh Bhoot</name>
+      </author>
+      <content type="html">&lt;h2 id=&quot;original-hoarding&quot;&gt;Original hoarding&lt;/h2&gt;
 
 &lt;p&gt;I found this hoarding while passing by my &lt;a href=&quot;https://www.youtube.com/watch?v=H0ZRwFCkfzU&amp;amp;t=25s&quot;&gt;university - VNSGU&lt;/a&gt;.&lt;/p&gt;
 
@@ -845,19 +884,19 @@ hello1
 &lt;h2 id=&quot;in-closing&quot;&gt;In closing&lt;/h2&gt;
 
 &lt;p&gt;Even though the design looks like an improvement to my eyes, both the &lt;a href=&quot;https://palette-tester.9elements.com/?id0=1&amp;amp;color0=%234F55D7&amp;amp;name0=Background&amp;amp;id1=2&amp;amp;color1=%23FF7F27&amp;amp;name1=Logo&amp;amp;mode=both&amp;amp;showAllColors=true&quot;&gt;complementary&lt;/a&gt; and the &lt;a href=&quot;https://palette-tester.9elements.com/?id0=1&amp;amp;color0=%23FFC095&amp;amp;name0=Background&amp;amp;id1=2&amp;amp;color1=%23FF7F27&amp;amp;name1=Logo&amp;amp;mode=both&amp;amp;showAllColors=true&quot;&gt;monochromatic&lt;/a&gt; colour schemes score a &lt;strong&gt;terrible contrast level&lt;/strong&gt; in the &lt;a href=&quot;https://palette-tester.9elements.com/&quot;&gt;Accessible Colour Palette Tester&lt;/a&gt;. I am at a loss about how to resolve it.What I do understand now is that a complementary colour relationship between background and foreground colour doesn&#39;t automatically provide a good contrast.&lt;/p&gt;</content>
-    <link href="/2025/ux-design-rework-1-i-love-vnsgu"/>
-    <summary type="html">This series is an attempt to learn and practise principles of design by reworking adverts that I find in the real world.</summary>
-    <category term="UX/Design" label="UX/Design" />
-    <published>2025-02-17T10:14:23.000Z</published>
-  </entry>
+      <link href="/2025/ux-design-rework-1-i-love-vnsgu"/>
+      <summary type="html">This series is an attempt to learn and practise principles of design by reworking adverts that I find in the real world.</summary>
+      <category term="UX/Design" label="UX/Design" />
+      <published>2025-02-17T10:14:23.000Z</published>
+    </entry>
 <entry>
-    <id>urn:uuid:27eeadca-a190-4744-a8a2-c5c274257a78</id>
-    <title type="html">Making tanstack docs more accessible with Stylus</title>
-    <updated>2025-02-17T05:57:43.000Z</updated>
-    <author>
-      <name>Jayesh Bhoot</name>
-    </author>
-    <content type="html">This post adds another Stylus fix to the list &lt;a href=&quot;https://www.wezm.net/v2/posts/2025/stylus/&quot;&gt;written by wezm&lt;/a&gt;.
+      <id>urn:uuid:27eeadca-a190-4744-a8a2-c5c274257a78</id>
+      <title type="html">Making tanstack docs more accessible with Stylus</title>
+      <updated>2025-02-17T05:57:43.000Z</updated>
+      <author>
+        <name>Jayesh Bhoot</name>
+      </author>
+      <content type="html">This post adds another Stylus fix to the list &lt;a href=&quot;https://www.wezm.net/v2/posts/2025/stylus/&quot;&gt;written by wezm&lt;/a&gt;.
 
 &lt;p&gt;My mouse/trackpad is configured to auto-click on rest/hover. Over time, I&quot;ve developed a habit of resting the cursor on any white space of a webpage.&lt;/p&gt;
 
@@ -874,20 +913,20 @@ hello1
 &lt;h2&gt;Update: 19 Feb 2025&lt;/h2&gt;
 
 &lt;p&gt;Tanner Linsley, the founder of the tanstack ecosystem, saw &lt;a href=&quot;https://bsky.app/profile/tannerlinsley.com/post/3lif6c3vlbm2m&quot;&gt;this post on Bluesky&lt;/a&gt;, and prompted me to submit a PR to fix this problem. &lt;a href=&quot;https://github.com/TanStack/tanstack.com/pull/343&quot;&gt;The PR&lt;/a&gt; is now merged.&lt;/p&gt;</content>
-    <link href="/2025/stylus-tanstack"/>
-    <summary type="html">Stylus is a &lt;a href=&quot;https://add0n.com/stylus.html&quot;&gt;browser extension&lt;/a&gt; with which you can modify styles on a webpage. I use it to fix accessibility and usability niggles faced on my regularly visited webpages.</summary>
-    <category term="Stylus" label="Stylus" />
+      <link href="/2025/stylus-tanstack"/>
+      <summary type="html">Stylus is a &lt;a href=&quot;https://add0n.com/stylus.html&quot;&gt;browser extension&lt;/a&gt; with which you can modify styles on a webpage. I use it to fix accessibility and usability niggles faced on my regularly visited webpages.</summary>
+      <category term="Stylus" label="Stylus" />
 <category term="CSS" label="CSS" />
-    <published>2025-02-17T05:57:43.000Z</published>
-  </entry>
+      <published>2025-02-17T05:57:43.000Z</published>
+    </entry>
 <entry>
-    <id>urn:uuid:7749ee91-b3bd-44a1-9a45-cd69ae779b73</id>
-    <title type="html">Use cases for &lt;code&gt;&amp;lt;form method=&quot;dialog&quot;&amp;gt;&lt;/code&gt;</title>
-    <updated>2025-01-15T10:52:16.000Z</updated>
-    <author>
-      <name>Jayesh Bhoot</name>
-    </author>
-    <content type="html">&lt;p&gt;I&#39;ve started using a relatively less known value of the &lt;code&gt;&amp;lt;form&amp;gt;&lt;/code&gt; element&#39;s &lt;code&gt;method&lt;/code&gt; attribute, called &lt;code&gt;dialog&lt;/code&gt;, for the following scenarios:&lt;/p&gt;
+      <id>urn:uuid:7749ee91-b3bd-44a1-9a45-cd69ae779b73</id>
+      <title type="html">Use cases for &lt;code&gt;&amp;lt;form method=&quot;dialog&quot;&amp;gt;&lt;/code&gt;</title>
+      <updated>2025-01-15T10:52:16.000Z</updated>
+      <author>
+        <name>Jayesh Bhoot</name>
+      </author>
+      <content type="html">&lt;p&gt;I&#39;ve started using a relatively less known value of the &lt;code&gt;&amp;lt;form&amp;gt;&lt;/code&gt; element&#39;s &lt;code&gt;method&lt;/code&gt; attribute, called &lt;code&gt;dialog&lt;/code&gt;, for the following scenarios:&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;when a form is submitted via AJAX.&lt;/li&gt;
@@ -920,36 +959,36 @@ hello1
 &lt;/ul&gt;
 
 &lt;p&gt;Am I wrong? May be. Please let me know in the comments.&lt;/p&gt;</content>
-    <link href="/2025/form-method-dialog"/>
-    <summary type="html">I&#39;ve started using a relatively less known value of the &lt;code&gt;&amp;lt;form&amp;gt;&lt;/code&gt; element&#39;s &lt;code&gt;method&lt;/code&gt; attribute, called &lt;code&gt;dialog&lt;/code&gt;, for the following scenarios:</summary>
-    <category term="HTML" label="HTML" />
-    <published>2025-01-15T10:52:16.000Z</published>
-  </entry>
+      <link href="/2025/form-method-dialog"/>
+      <summary type="html">I&#39;ve started using a relatively less known value of the &lt;code&gt;&amp;lt;form&amp;gt;&lt;/code&gt; element&#39;s &lt;code&gt;method&lt;/code&gt; attribute, called &lt;code&gt;dialog&lt;/code&gt;, for the following scenarios:</summary>
+      <category term="HTML" label="HTML" />
+      <published>2025-01-15T10:52:16.000Z</published>
+    </entry>
 <entry>
-    <id>urn:uuid:80cea035-27cc-4944-b5fb-8e5b4397153e</id>
-    <title type="html">Name your SQL constraints</title>
-    <updated>2024-12-09T07:05:18.000Z</updated>
-    <author>
-      <name>Jayesh Bhoot</name>
-    </author>
-    <content type="html">&lt;p&gt;I learnt the hard way, while trying to amend the structure of a database instantiated at more than one place, that its best to explicitly name the SQL constraints like a foreign key.&lt;/p&gt;
+      <id>urn:uuid:80cea035-27cc-4944-b5fb-8e5b4397153e</id>
+      <title type="html">Name your SQL constraints</title>
+      <updated>2024-12-09T07:05:18.000Z</updated>
+      <author>
+        <name>Jayesh Bhoot</name>
+      </author>
+      <content type="html">&lt;p&gt;I learnt the hard way, while trying to amend the structure of a database instantiated at more than one place, that its best to explicitly name the SQL constraints like a foreign key.&lt;/p&gt;
 
 &lt;p&gt;Trying to adjust a foreign key constraint by referring it to its implicit name felt like holding on to a falling person just with their shoe. I could never be sure that the implicit name would be identical across different instances of the database.&lt;/p&gt;
 
 &lt;p&gt;Also, in MySQl at least, there was no foolproof way to dynamically query for the implicit name.&lt;/p&gt;</content>
-    <link href="/2024/name-your-sql-constraints"/>
-    <summary type="html">I learnt the hard way, while trying to amend the structure of a database instantiated at more than one place, that its best to explicitly name the SQL constraints like a foreign key.</summary>
-    <category term="SQL" label="SQL" />
-    <published>2024-12-09T07:05:18.000Z</published>
-  </entry>
+      <link href="/2024/name-your-sql-constraints"/>
+      <summary type="html">I learnt the hard way, while trying to amend the structure of a database instantiated at more than one place, that its best to explicitly name the SQL constraints like a foreign key.</summary>
+      <category term="SQL" label="SQL" />
+      <published>2024-12-09T07:05:18.000Z</published>
+    </entry>
 <entry>
-    <id>urn:uuid:42b89e9a-1aed-412c-89a8-da36a6221c82</id>
-    <title type="html">Connecting to MySQL running on NixOS on local network</title>
-    <updated>2024-12-07T08:27:23.000Z</updated>
-    <author>
-      <name>Jayesh Bhoot</name>
-    </author>
-    <content type="html">&lt;h2 id=&quot;the-big-picture&quot;&gt;The big picture&lt;/h2&gt;
+      <id>urn:uuid:42b89e9a-1aed-412c-89a8-da36a6221c82</id>
+      <title type="html">Connecting to MySQL running on NixOS on local network</title>
+      <updated>2024-12-07T08:27:23.000Z</updated>
+      <author>
+        <name>Jayesh Bhoot</name>
+      </author>
+      <content type="html">&lt;h2 id=&quot;the-big-picture&quot;&gt;The big picture&lt;/h2&gt;
 
 &lt;p&gt;This setup aims to allow connections to a MySQL database hosted on my NixOS workstation, &lt;em&gt;only on local network&lt;/em&gt;.&lt;/p&gt;
 
@@ -1006,34 +1045,34 @@ networking.firewall.interfaces.wlp0s20f3.allowedTCPPorts = [ 3306 ];&lt;/code&gt
 &lt;p&gt;Then, rebuild NixOS.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;$ sudo nixos-rebuild switch --flake .&lt;/code&gt;&lt;/pre&gt;</content>
-    <link href="/2024/conn-to-mysql-on-nixos-from-local-network"/>
-    <summary type="html">I have a Linux workstation, and a Macbook. While I prefer to work on Linux, I also like the mobility around my house. Once, I needed to access a database instance running on the Linux workstation from my MacBook. My first instinct was to sell it all and buy a Linux-operated ThinkPad! After I placated myself, I came up with the following setup..</summary>
-    <category term="MySQL" label="MySQL" />
+      <link href="/2024/conn-to-mysql-on-nixos-from-local-network"/>
+      <summary type="html">I have a Linux workstation, and a Macbook. While I prefer to work on Linux, I also like the mobility around my house. Once, I needed to access a database instance running on the Linux workstation from my MacBook. My first instinct was to sell it all and buy a Linux-operated ThinkPad! After I placated myself, I came up with the following setup..</summary>
+      <category term="MySQL" label="MySQL" />
 <category term="Nix" label="Nix" />
-    <published>2024-12-07T08:27:23.000Z</published>
-  </entry>
+      <published>2024-12-07T08:27:23.000Z</published>
+    </entry>
 <entry>
-    <id>urn:uuid:0224c78a-83b9-495d-ba67-892c43e89a4f</id>
-    <title type="html">Flossing - do orthodon&#39;t. There is no try.</title>
-    <updated>2024-11-19T05:36:29.000Z</updated>
-    <author>
-      <name>Jayesh Bhoot</name>
-    </author>
-    <content type="html">&lt;p&gt;Flossing - do orthodon&#39;t. There is no try.&lt;/p&gt;</content>
-    <link href="/2024/flossing-do-orthodont"/>
-    <summary type="html">Flossing - do orthodon&#39;t. There is no try.</summary>
-    <category term="Uncollected" label="Uncollected" />
+      <id>urn:uuid:0224c78a-83b9-495d-ba67-892c43e89a4f</id>
+      <title type="html">Flossing - do orthodon&#39;t. There is no try.</title>
+      <updated>2024-11-19T05:36:29.000Z</updated>
+      <author>
+        <name>Jayesh Bhoot</name>
+      </author>
+      <content type="html">&lt;p&gt;Flossing - do orthodon&#39;t. There is no try.&lt;/p&gt;</content>
+      <link href="/2024/flossing-do-orthodont"/>
+      <summary type="html">Flossing - do orthodon&#39;t. There is no try.</summary>
+      <category term="Uncollected" label="Uncollected" />
 <category term="Note" label="Note" />
-    <published>2024-11-19T05:36:29.000Z</published>
-  </entry>
+      <published>2024-11-19T05:36:29.000Z</published>
+    </entry>
 <entry>
-    <id>urn:uuid:7031ff09-d4df-4c6b-95bf-ee8de4a9d203</id>
-    <title type="html">Being chill</title>
-    <updated>2024-11-10T04:40:57.000Z</updated>
-    <author>
-      <name>Jayesh Bhoot</name>
-    </author>
-    <content type="html">&lt;p&gt;One guiding principle to be a chill person is pretty clear to most people: Let go of what you can&#39;t control.&lt;/p&gt;
+      <id>urn:uuid:7031ff09-d4df-4c6b-95bf-ee8de4a9d203</id>
+      <title type="html">Being chill</title>
+      <updated>2024-11-10T04:40:57.000Z</updated>
+      <author>
+        <name>Jayesh Bhoot</name>
+      </author>
+      <content type="html">&lt;p&gt;One guiding principle to be a chill person is pretty clear to most people: Let go of what you can&#39;t control.&lt;/p&gt;
 
 &lt;p&gt;But, to me, another principle is more important, which also gets overlooked: Don&#39;t ignore what you &lt;em&gt;can&lt;/em&gt; control. Get it done.&lt;/p&gt;
 
@@ -1058,19 +1097,19 @@ networking.firewall.interfaces.wlp0s20f3.allowedTCPPorts = [ 3306 ];&lt;/code&gt
 &lt;h3&gt;In closing&lt;/h3&gt;
 
 &lt;p&gt;Being chill is a lot of work! There are days I just prefer to scream and flail around.&lt;/p&gt;</content>
-    <link href="/2024/being-chill"/>
-    <summary type="html">Being a chill dude is the exact &lt;em&gt;opposite&lt;/em&gt; of being &lt;a href=&quot;https://en.wikipedia.org/wiki/The_Big_Lebowski&quot;&gt;The Dude&lt;/a&gt;.</summary>
-    <category term="Philosophy of life" label="Philosophy of life" />
-    <published>2024-11-10T04:40:57.000Z</published>
-  </entry>
+      <link href="/2024/being-chill"/>
+      <summary type="html">Being a chill dude is the exact &lt;em&gt;opposite&lt;/em&gt; of being &lt;a href=&quot;https://en.wikipedia.org/wiki/The_Big_Lebowski&quot;&gt;The Dude&lt;/a&gt;.</summary>
+      <category term="Philosophy of life" label="Philosophy of life" />
+      <published>2024-11-10T04:40:57.000Z</published>
+    </entry>
 <entry>
-    <id>urn:uuid:de9ea10f-6f70-43f3-9a31-69b936ab5b83</id>
-    <title type="html">A mental model for Linux file, hard and soft links</title>
-    <updated>2024-11-09T10:36:59.000Z</updated>
-    <author>
-      <name>Jayesh Bhoot</name>
-    </author>
-    <content type="html">&lt;h2 id=&quot;what-is-a-file-in-linux&quot;&gt;What makes a file in Linux?&lt;/h2&gt;
+      <id>urn:uuid:de9ea10f-6f70-43f3-9a31-69b936ab5b83</id>
+      <title type="html">A mental model for Linux file, hard and soft links</title>
+      <updated>2024-11-09T10:36:59.000Z</updated>
+      <author>
+        <name>Jayesh Bhoot</name>
+      </author>
+      <content type="html">&lt;h2 id=&quot;what-is-a-file-in-linux&quot;&gt;What makes a file in Linux?&lt;/h2&gt;
 
 &lt;p&gt;At the storage level, a file is a block of data. There is more to it than just that, but I won&#39;t delve deep into it.&lt;/p&gt;
 
@@ -1300,21 +1339,21 @@ $ stat --format=&quot;%s&quot; softlink2.txt
 &lt;li&gt;&lt;code&gt;man 7 symlink&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;man 7 path_resolution&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;</content>
-    <link href="/2024/on-linux-file-and-links"/>
-    <summary type="html">I always felt bothered about my superficial understanding of inode, hard and soft links in Linux. Here I attempt to structure my learnings into a simplified mental model. Corrections are welcome.</summary>
-    <category term="Mental model" label="Mental model" />
+      <link href="/2024/on-linux-file-and-links"/>
+      <summary type="html">I always felt bothered about my superficial understanding of inode, hard and soft links in Linux. Here I attempt to structure my learnings into a simplified mental model. Corrections are welcome.</summary>
+      <category term="Mental model" label="Mental model" />
 <category term="Linux" label="Linux" />
 <category term="RHCSA" label="RHCSA" />
-    <published>2024-11-09T10:36:59.000Z</published>
-  </entry>
+      <published>2024-11-09T10:36:59.000Z</published>
+    </entry>
 <entry>
-    <id>urn:uuid:61505f8c-bb46-4bbe-a3f3-b595b3013351</id>
-    <title type="html">The Trumping Joke</title>
-    <updated>2024-11-08T16:00:40.000Z</updated>
-    <author>
-      <name>Jayesh Bhoot</name>
-    </author>
-    <content type="html">&lt;p&gt;I was always skeptical about how the &lt;i&gt;Joker&lt;/i&gt; takes over the &lt;i&gt;Mob&lt;/i&gt; in &lt;cite&gt;The Dark Knight&lt;/cite&gt;.&lt;/p&gt;
+      <id>urn:uuid:61505f8c-bb46-4bbe-a3f3-b595b3013351</id>
+      <title type="html">The Trumping Joke</title>
+      <updated>2024-11-08T16:00:40.000Z</updated>
+      <author>
+        <name>Jayesh Bhoot</name>
+      </author>
+      <content type="html">&lt;p&gt;I was always skeptical about how the &lt;i&gt;Joker&lt;/i&gt; takes over the &lt;i&gt;Mob&lt;/i&gt; in &lt;cite&gt;The Dark Knight&lt;/cite&gt;.&lt;/p&gt;
 
 &lt;p&gt;The Mob looked too powerful, too entrenched for that to happen.&lt;/p&gt;
 
@@ -1329,19 +1368,19 @@ $ stat --format=&quot;%s&quot; softlink2.txt
 &lt;p&gt;Both of them whisked away enough followers from the old guard, converted them into fanatics, loyal to their tall claims.&lt;/p&gt;
 
 &lt;p&gt;For every piece of ridiculous fiction, there is a reality out there that outmatches it.&lt;/p&gt;</content>
-    <link href="/2024/trump-and-joker"/>
-    <summary type="html">I was always skeptical about how the &lt;i&gt;Joker&lt;/i&gt; takes over the &lt;i&gt;Mob&lt;/i&gt; in &lt;cite&gt;The Dark Knight&lt;/cite&gt;.</summary>
-    <category term="Uncollected" label="Uncollected" />
-    <published>2024-11-08T16:00:40.000Z</published>
-  </entry>
+      <link href="/2024/trump-and-joker"/>
+      <summary type="html">I was always skeptical about how the &lt;i&gt;Joker&lt;/i&gt; takes over the &lt;i&gt;Mob&lt;/i&gt; in &lt;cite&gt;The Dark Knight&lt;/cite&gt;.</summary>
+      <category term="Uncollected" label="Uncollected" />
+      <published>2024-11-08T16:00:40.000Z</published>
+    </entry>
 <entry>
-    <id>urn:uuid:dea8aaf0-4066-43bd-8b01-a5b482609206</id>
-    <title type="html">Different kinds of simple</title>
-    <updated>2024-10-01T07:22:39.000Z</updated>
-    <author>
-      <name>Jayesh Bhoot</name>
-    </author>
-    <content type="html">&lt;p&gt;This post is syndicated from &lt;a href=&quot;https://lobste.rs/s/8ep75v/how_1_software_engineer_outperforms_138#c_kjyns6&quot;&gt;my response&lt;/a&gt; to a Lobste.rs story titled &lt;a href=&quot;https://lobste.rs/s/8ep75v/how_1_software_engineer_outperforms_138&quot;&gt;How 1 Software Engineer Outperforms 138 - Lichess Case Study&lt;/a&gt;.&lt;/p&gt;
+      <id>urn:uuid:dea8aaf0-4066-43bd-8b01-a5b482609206</id>
+      <title type="html">Different kinds of simple</title>
+      <updated>2024-10-01T07:22:39.000Z</updated>
+      <author>
+        <name>Jayesh Bhoot</name>
+      </author>
+      <content type="html">&lt;p&gt;This post is syndicated from &lt;a href=&quot;https://lobste.rs/s/8ep75v/how_1_software_engineer_outperforms_138#c_kjyns6&quot;&gt;my response&lt;/a&gt; to a Lobste.rs story titled &lt;a href=&quot;https://lobste.rs/s/8ep75v/how_1_software_engineer_outperforms_138&quot;&gt;How 1 Software Engineer Outperforms 138 - Lichess Case Study&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;The video author talked about &lt;em&gt;simple&lt;/em&gt; in terms of fewer lines of code, as in &quot;fewer the features, fewer the lines of code, simpler the codebase&quot;. Recently, I chose another kind of &lt;em&gt;simple&lt;/em&gt; that increased the lines of code and duplication.&lt;/p&gt;
 
@@ -1354,19 +1393,19 @@ $ stat --format=&quot;%s&quot; softlink2.txt
 &lt;p&gt;I chose the latter approach. The segment ended up being split into &lt;em&gt;eight&lt;/em&gt; distinct sub-workflows. One clear benefit was that the number of bugs in the existing implementation reduced, because logic unique to each sub-workflow got isolated. For the same reason, the code became easy to follow. I hope this choice remains the right choice further down the line. I feel this approach would be easier to follow to a later re-visitor or to a new person.&lt;/p&gt;
 
 &lt;p&gt;An unaffiliated side-note: the above re-factoring became possible due to the statically typed language the code was implemented in – ReScript, which has an ML-like type system. It gave me a high degree of confidence in making a fearless re-factoring.&lt;/p&gt;</content>
-    <link href="/2024/different-kinds-of-simple"/>
-    <summary type="html">This post is syndicated from &lt;a href=&quot;https://lobste.rs/s/8ep75v/how_1_software_engineer_outperforms_138#c_kjyns6&quot;&gt;my response&lt;/a&gt; to a Lobste.rs story titled &lt;a href=&quot;https://lobste.rs/s/8ep75v/how_1_software_engineer_outperforms_138&quot;&gt;How 1 Software Engineer Outperforms 138 - Lichess Case Study&lt;/a&gt;.</summary>
-    <category term="Philosophy of software design" label="Philosophy of software design" />
-    <published>2024-10-01T07:22:39.000Z</published>
-  </entry>
+      <link href="/2024/different-kinds-of-simple"/>
+      <summary type="html">This post is syndicated from &lt;a href=&quot;https://lobste.rs/s/8ep75v/how_1_software_engineer_outperforms_138#c_kjyns6&quot;&gt;my response&lt;/a&gt; to a Lobste.rs story titled &lt;a href=&quot;https://lobste.rs/s/8ep75v/how_1_software_engineer_outperforms_138&quot;&gt;How 1 Software Engineer Outperforms 138 - Lichess Case Study&lt;/a&gt;.</summary>
+      <category term="Philosophy of software design" label="Philosophy of software design" />
+      <published>2024-10-01T07:22:39.000Z</published>
+    </entry>
 <entry>
-    <id>urn:uuid:05744722-6bac-4385-b50b-1aa0a802eb53</id>
-    <title type="html">Ki modal editor - first impressions</title>
-    <updated>2024-09-20T12:31:21.000Z</updated>
-    <author>
-      <name>Jayesh Bhoot</name>
-    </author>
-    <content type="html">&lt;p&gt;
+      <id>urn:uuid:05744722-6bac-4385-b50b-1aa0a802eb53</id>
+      <title type="html">Ki modal editor - first impressions</title>
+      <updated>2024-09-20T12:31:21.000Z</updated>
+      <author>
+        <name>Jayesh Bhoot</name>
+      </author>
+      <content type="html">&lt;p&gt;
       Copy-pasting my comment in a converstion on lobste.rs titled
       &lt;a href=&quot;https://lobste.rs/s/20t1jj/wonderful_vi#c_k7tr1m&quot;&gt;Wonderful vi&lt;/a&gt;:
     &lt;/p&gt;
@@ -1446,20 +1485,20 @@ $ stat --format=&quot;%s&quot; softlink2.txt
         &lt;kbd&gt;\y&lt;/kbd&gt; or &lt;kbd&gt;\p&lt;/kbd&gt; copies or pastes to the system clipboard.
       &lt;/li&gt;
     &lt;/ul&gt;</content>
-    <link href="/2024/ki-first-impressions"/>
-    <summary type="html">I tried out a new modal editor called &lt;i&gt;Ki&lt;/i&gt;, and inevitably measured my
+      <link href="/2024/ki-first-impressions"/>
+      <summary type="html">I tried out a new modal editor called &lt;i&gt;Ki&lt;/i&gt;, and inevitably measured my
     first impressions with Vim and Helix.</summary>
-    <category term="Modal editing" label="Modal editing" />
-    <published>2024-09-20T12:31:21.000Z</published>
-  </entry>
+      <category term="Modal editing" label="Modal editing" />
+      <published>2024-09-20T12:31:21.000Z</published>
+    </entry>
 <entry>
-    <id>urn:uuid:472b7fe6-d06b-428d-91c0-e931e953b421</id>
-    <title type="html">How I use &lt;code&gt;:has()&lt;/code&gt; selector to add table of contents</title>
-    <updated>2024-09-20T11:31:21.000Z</updated>
-    <author>
-      <name>Jayesh Bhoot</name>
-    </author>
-    <content type="html">&lt;p&gt;
+      <id>urn:uuid:472b7fe6-d06b-428d-91c0-e931e953b421</id>
+      <title type="html">How I use &lt;code&gt;:has()&lt;/code&gt; selector to add table of contents</title>
+      <updated>2024-09-20T11:31:21.000Z</updated>
+      <author>
+        <name>Jayesh Bhoot</name>
+      </author>
+      <content type="html">&lt;p&gt;
       Copy-pasting my comment in a converstion on lobste.rs titled
       &lt;a href=&quot;https://lobste.rs/s/gery1i/undeniable_utility_css_has#c_unpyso&quot;&gt;The Undeniable Utility Of CSS :has&lt;/a&gt;:
     &lt;/p&gt;
@@ -1491,36 +1530,36 @@ action = &quot;insert_after&quot;&lt;/code&gt;&lt;/pre&gt;
       displaying a tortoise symbol to flag an unconstrained
       &lt;code&gt;:has&lt;/code&gt; selector.
     &lt;/p&gt;</content>
-    <link href="/2024/has-selector-for-toc"/>
-    <summary type="html">I show off a static site gen soupault, and my solution to add table of
+      <link href="/2024/has-selector-for-toc"/>
+      <summary type="html">I show off a static site gen soupault, and my solution to add table of
     contents using CSS selectors</summary>
-    <category term="CSS" label="CSS" />
+      <category term="CSS" label="CSS" />
 <category term="Website Meta" label="Website Meta" />
 <category term="Soupault" label="Soupault" />
-    <published>2024-09-20T11:31:21.000Z</published>
-  </entry>
+      <published>2024-09-20T11:31:21.000Z</published>
+    </entry>
 <entry>
-    <id>urn:uuid:b2e08fa4-8283-4044-a5ed-84a1531faf94</id>
-    <title type="html">Forgotten lesson remembered after staring 5 minutes at the screen: &lt;code&gt;innerHTML&lt;/code&gt; cannot contain a &lt;code&gt;&amp;lt;script&amp;gt;&lt;/code&gt; tag.</title>
-    <updated>2024-09-12T11:31:21.000Z</updated>
-    <author>
-      <name>Jayesh Bhoot</name>
-    </author>
-    <content type="html">&lt;p&gt;Forgotten lesson remembered after staring 5 minutes at the screen: &lt;code&gt;innerHTML&lt;/code&gt; cannot contain a &lt;code&gt;&amp;lt;script&amp;gt;&lt;/code&gt; tag.&lt;/p&gt;</content>
-    <link href="/2024/no-script-in-innerhtml"/>
-    <summary type="html">Forgotten lesson remembered after staring 5 minutes at the screen: &lt;code&gt;innerHTML&lt;/code&gt; cannot contain a &lt;code&gt;&amp;lt;script&amp;gt;&lt;/code&gt; tag.</summary>
-    <category term="Note" label="Note" />
+      <id>urn:uuid:b2e08fa4-8283-4044-a5ed-84a1531faf94</id>
+      <title type="html">Forgotten lesson remembered after staring 5 minutes at the screen: &lt;code&gt;innerHTML&lt;/code&gt; cannot contain a &lt;code&gt;&amp;lt;script&amp;gt;&lt;/code&gt; tag.</title>
+      <updated>2024-09-12T11:31:21.000Z</updated>
+      <author>
+        <name>Jayesh Bhoot</name>
+      </author>
+      <content type="html">&lt;p&gt;Forgotten lesson remembered after staring 5 minutes at the screen: &lt;code&gt;innerHTML&lt;/code&gt; cannot contain a &lt;code&gt;&amp;lt;script&amp;gt;&lt;/code&gt; tag.&lt;/p&gt;</content>
+      <link href="/2024/no-script-in-innerhtml"/>
+      <summary type="html">Forgotten lesson remembered after staring 5 minutes at the screen: &lt;code&gt;innerHTML&lt;/code&gt; cannot contain a &lt;code&gt;&amp;lt;script&amp;gt;&lt;/code&gt; tag.</summary>
+      <category term="Note" label="Note" />
 <category term="JavaScript" label="JavaScript" />
-    <published>2024-09-12T11:31:21.000Z</published>
-  </entry>
+      <published>2024-09-12T11:31:21.000Z</published>
+    </entry>
 <entry>
-    <id>urn:uuid:214c8527-7318-4c6c-ae37-05765bdc353d</id>
-    <title type="html">Cool ways to generate a UUID</title>
-    <updated>2024-09-07T11:31:21.000Z</updated>
-    <author>
-      <name>Jayesh Bhoot</name>
-    </author>
-    <content type="html">&lt;p&gt;OK, may be not cool enough for Linux veterans, but cool enough for me!&lt;/p&gt;
+      <id>urn:uuid:214c8527-7318-4c6c-ae37-05765bdc353d</id>
+      <title type="html">Cool ways to generate a UUID</title>
+      <updated>2024-09-07T11:31:21.000Z</updated>
+      <author>
+        <name>Jayesh Bhoot</name>
+      </author>
+      <content type="html">&lt;p&gt;OK, may be not cool enough for Linux veterans, but cool enough for me!&lt;/p&gt;
 
   &lt;p&gt;There are two ways, in the order of coolness:&lt;/p&gt;
 
@@ -1546,94 +1585,94 @@ $ uuidgen | tr &quot;[:upper:]&quot; &quot;[:lower:]&quot;
 919ae848-df9c-41fa-b59f-de4b933c927c&lt;/code&gt;&lt;/pre&gt;
     &lt;/li&gt;
   &lt;/ol&gt;</content>
-    <link href="/2024/cool-ways-to-get-uuid"/>
-    <summary type="html">OK, may be not cool enough for Linux veterans, but cool enough for me!</summary>
-    <category term="Linux" label="Linux" />
+      <link href="/2024/cool-ways-to-get-uuid"/>
+      <summary type="html">OK, may be not cool enough for Linux veterans, but cool enough for me!</summary>
+      <category term="Linux" label="Linux" />
 <category term="MacOS" label="MacOS" />
-    <published>2024-09-07T11:31:21.000Z</published>
-  </entry>
+      <published>2024-09-07T11:31:21.000Z</published>
+    </entry>
 <entry>
-    <id>urn:uuid:06da33f8-2f18-431a-99f2-d2085e8a8702</id>
-    <title type="html">Choosing curious over judgmental</title>
-    <updated>2024-09-07T10:31:21.000Z</updated>
-    <author>
-      <name>Jayesh Bhoot</name>
-    </author>
-    <content type="html">&lt;p&gt;&lt;i&gt;Be curious, not judgmental.&lt;/i&gt; I don&#39;t know who said it, but I heard it in the TV Show &lt;i&gt;Ted Lasso&lt;/i&gt;. And boy, is it cathartic in its own way!&lt;/p&gt;
+      <id>urn:uuid:06da33f8-2f18-431a-99f2-d2085e8a8702</id>
+      <title type="html">Choosing curious over judgmental</title>
+      <updated>2024-09-07T10:31:21.000Z</updated>
+      <author>
+        <name>Jayesh Bhoot</name>
+      </author>
+      <content type="html">&lt;p&gt;&lt;i&gt;Be curious, not judgmental.&lt;/i&gt; I don&#39;t know who said it, but I heard it in the TV Show &lt;i&gt;Ted Lasso&lt;/i&gt;. And boy, is it cathartic in its own way!&lt;/p&gt;
 
   &lt;p&gt;Just being non-judgmental hasn&#39;t really worked for me in the past. I needed to replace it with something. Curiosity is a good replacement.&lt;/p&gt;
 
   &lt;p&gt;As a pleasant side effect, this approach freed me from the pressure of being right or the fear of being wrong. If you are judging something or someone, you better be right about it. No such stress anymore!&lt;/p&gt;
 
   &lt;aside&gt;Somewhat amusingly, this also got me to configure my &lt;a href=&quot;https://addons.mozilla.org/en-US/firefox/addon/enforce-browser-fonts/&quot;&gt;Firefox add-on&lt;/a&gt; to allow website-defined fonts by default. Earlier, I had it configured to force specific fonts.&lt;/aside&gt;</content>
-    <link href="/2024/curiosity-over-judgement"/>
-    <summary type="html">I don&#39;t know about the cat, but curiosity certainly killed the judgmental!</summary>
-    <category term="Philosophy of life" label="Philosophy of life" />
-    <published>2024-09-07T10:31:21.000Z</published>
-  </entry>
+      <link href="/2024/curiosity-over-judgement"/>
+      <summary type="html">I don&#39;t know about the cat, but curiosity certainly killed the judgmental!</summary>
+      <category term="Philosophy of life" label="Philosophy of life" />
+      <published>2024-09-07T10:31:21.000Z</published>
+    </entry>
 <entry>
-    <id>urn:uuid:c10c93ba-45e0-4f6f-b556-b0988ef852a3</id>
-    <title type="html">Scripting with Scala</title>
-    <updated>2024-08-24T11:31:21.000Z</updated>
-    <author>
-      <name>Jayesh Bhoot</name>
-    </author>
-    <content type="html">&lt;p&gt;Scala 3.5&#39;s CLI now makes scripting with scala seamless! Just a single-file script setup!&lt;/p&gt;
+      <id>urn:uuid:c10c93ba-45e0-4f6f-b556-b0988ef852a3</id>
+      <title type="html">Scripting with Scala</title>
+      <updated>2024-08-24T11:31:21.000Z</updated>
+      <author>
+        <name>Jayesh Bhoot</name>
+      </author>
+      <content type="html">&lt;p&gt;Scala 3.5&#39;s CLI now makes scripting with scala seamless! Just a single-file script setup!&lt;/p&gt;
 
 &lt;p&gt;For example, due to the single-file scripting nature imparted by &lt;i&gt;Scala 3.5 CLI&lt;/i&gt;, I was able to embed a Scala script in a &lt;i&gt;node.js&lt;/i&gt; project to analyse parsing of a geometric Point stored in &lt;i&gt;MySQL 8&lt;/i&gt;. The script is &lt;a href=&quot;https://github.com/jbhoot/poc-buggy-geographic-point-parsing-by-node-mysql2/blob/main/jdbc-analysis/main.scala&quot;&gt;hosted on GitHub&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;With Scala 3.5, plus a built-in watcher, and a large scala/jvm ecosystem, Scala has become a good alternative for scripting.&lt;/p&gt;</content>
-    <link href="/2024/scala-3_5-scripting"/>
-    <summary type="html">Scala 3.5&#39;s CLI now makes scripting with scala seamless! Just a single-file script setup!</summary>
-    <category term="Scala" label="Scala" />
-    <published>2024-08-24T11:31:21.000Z</published>
-  </entry>
+      <link href="/2024/scala-3_5-scripting"/>
+      <summary type="html">Scala 3.5&#39;s CLI now makes scripting with scala seamless! Just a single-file script setup!</summary>
+      <category term="Scala" label="Scala" />
+      <published>2024-08-24T11:31:21.000Z</published>
+    </entry>
 <entry>
-    <id>urn:uuid:cb0478f2-de68-414b-b6c3-023ef44c13dc</id>
-    <title type="html">Task failed successfully - Linux edition</title>
-    <updated>2024-08-20T11:00:00.000Z</updated>
-    <author>
-      <name>Jayesh Bhoot</name>
-    </author>
-    <content type="html">&lt;figure&gt;
+      <id>urn:uuid:cb0478f2-de68-414b-b6c3-023ef44c13dc</id>
+      <title type="html">Task failed successfully - Linux edition</title>
+      <updated>2024-08-20T11:00:00.000Z</updated>
+      <author>
+        <name>Jayesh Bhoot</name>
+      </author>
+      <content type="html">&lt;figure&gt;
 &lt;img src=&quot;/static/images/task-failed-successfully-linux-edition.jpeg&quot; alt=&quot;Screenshot of a message printed by pinfo command on terminal on Linux that says &#39;crash with: Success&#39;&quot;&gt;
 &lt;figcaption&gt;I did something to &lt;i&gt;GNU pinfo&lt;/i&gt;.&lt;/figcaption&gt;
 &lt;/figure&gt;</content>
-    <link href="/2024/task-failed-successfully-linux-edition"/>
-    <summary type="html">&lt;img alt=&quot;Post author&#39;s photo&quot; class=&quot;u-photo&quot; src=&quot;/static/images/profile-pic-closeup-round.png&quot; width=&quot;60&quot;&gt;
+      <link href="/2024/task-failed-successfully-linux-edition"/>
+      <summary type="html">&lt;img alt=&quot;Post author&#39;s photo&quot; class=&quot;u-photo&quot; src=&quot;/static/images/profile-pic-closeup-round.png&quot; width=&quot;60&quot;&gt;
   &lt;span&gt;
     &lt;span&gt;Written by &lt;a class=&quot;p-author h-card&quot; href=&quot;https://bhoot.dev/about&quot;&gt;Jayesh Bhoot&lt;/a&gt;&lt;/span&gt;
   &lt;/span&gt;</summary>
-    <category term="RHCSA" label="RHCSA" />
-    <published>2024-08-20T11:00:00.000Z</published>
-  </entry>
+      <category term="RHCSA" label="RHCSA" />
+      <published>2024-08-20T11:00:00.000Z</published>
+    </entry>
 <entry>
-    <id>urn:uuid:4a3058d8-0c53-4aaa-ad99-daf4254eac48</id>
-    <title type="html">British v/s American comedy dramas</title>
-    <updated>2024-07-07T11:31:21.000Z</updated>
-    <author>
-      <name>Jayesh Bhoot</name>
-    </author>
-    <content type="html">&lt;p&gt;They always felt different from each other, but I could never quite put a finger on the difference.&lt;/p&gt;
+      <id>urn:uuid:4a3058d8-0c53-4aaa-ad99-daf4254eac48</id>
+      <title type="html">British v/s American comedy dramas</title>
+      <updated>2024-07-07T11:31:21.000Z</updated>
+      <author>
+        <name>Jayesh Bhoot</name>
+      </author>
+      <content type="html">&lt;p&gt;They always felt different from each other, but I could never quite put a finger on the difference.&lt;/p&gt;
 
 &lt;p&gt;Then it hit me today, while I was watching a British series called &lt;a href=&quot;https://tv.apple.com/in/episode/nikki-and-jason/umc.cmc.2dzdkdvedw0n9h25d49y9lh99?action=playSmartEpisode&quot;&gt;Trying&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;In American shows, the script feels quite...scripted. Every other dialogue in a conversation is written to be a punchline or a one-liner.&lt;/p&gt;
 
 &lt;p&gt;British dramas feel more organic – a conversation goes on with (wry, dry) humour sprinkled here and there.&lt;/p&gt;</content>
-    <link href="/2024/british-vs-american-comedy-drama"/>
-    <summary type="html">They always felt different from each other, but I could never quite put a finger on the difference.</summary>
-    <category term="Uncollected" label="Uncollected" />
-    <published>2024-07-07T11:31:21.000Z</published>
-  </entry>
+      <link href="/2024/british-vs-american-comedy-drama"/>
+      <summary type="html">They always felt different from each other, but I could never quite put a finger on the difference.</summary>
+      <category term="Uncollected" label="Uncollected" />
+      <published>2024-07-07T11:31:21.000Z</published>
+    </entry>
 <entry>
-    <id>urn:uuid:9905f662-e652-4747-949b-37c1112e1bad</id>
-    <title type="html">Stubborn pop-up on &lt;i&gt;Mutual Fund Utilities (MFU)&lt;/i&gt; website</title>
-    <updated>2024-06-23T11:31:21.000Z</updated>
-    <author>
-      <name>Jayesh Bhoot</name>
-    </author>
-    <content type="html">&lt;div class=&quot;toc&quot;&gt;&lt;h2 id=&quot;table-of-contents&quot;&gt;Table of contents&lt;/h2&gt;&lt;ol class=&quot;toc-1&quot;&gt;&lt;li&gt;&lt;a href=&quot;#table-of-contents&quot;&gt;Table of contents&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#the-problem&quot;&gt;The problem&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#the-solution&quot;&gt;The solution&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#comments&quot;&gt;Comments&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;
+      <id>urn:uuid:9905f662-e652-4747-949b-37c1112e1bad</id>
+      <title type="html">Stubborn pop-up on &lt;i&gt;Mutual Fund Utilities (MFU)&lt;/i&gt; website</title>
+      <updated>2024-06-23T11:31:21.000Z</updated>
+      <author>
+        <name>Jayesh Bhoot</name>
+      </author>
+      <content type="html">&lt;div class=&quot;toc&quot;&gt;&lt;h2 id=&quot;table-of-contents&quot;&gt;Table of contents&lt;/h2&gt;&lt;ol class=&quot;toc-1&quot;&gt;&lt;li&gt;&lt;a href=&quot;#table-of-contents&quot;&gt;Table of contents&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#the-problem&quot;&gt;The problem&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#the-solution&quot;&gt;The solution&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#comments&quot;&gt;Comments&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;
 
 &lt;p&gt;Tip for Mutual Fund Utilities (MFU) users:&lt;/p&gt;
 
@@ -1658,19 +1697,19 @@ $ uuidgen | tr &quot;[:upper:]&quot; &quot;[:lower:]&quot;
 &lt;h2 id=&quot;the-solution&quot;&gt;The solution&lt;/h2&gt;
 
 &lt;p&gt;In order for any holders to verify nominee details, use this link: &lt;a href=&quot;https://mfuonline.com/CNOMV&quot;&gt;https://mfuonline.com/CNOMV&lt;/a&gt;&lt;/p&gt;</content>
-    <link href="/2024/mfu-nominee-verification"/>
-    <summary type="html">Tip for Mutual Fund Utilities (MFU) users:</summary>
-    <category term="Uncollected" label="Uncollected" />
-    <published>2024-06-23T11:31:21.000Z</published>
-  </entry>
+      <link href="/2024/mfu-nominee-verification"/>
+      <summary type="html">Tip for Mutual Fund Utilities (MFU) users:</summary>
+      <category term="Uncollected" label="Uncollected" />
+      <published>2024-06-23T11:31:21.000Z</published>
+    </entry>
 <entry>
-    <id>urn:uuid:b1319873-65a5-49e3-82aa-334e3fb7e353</id>
-    <title type="html">Effective Scala, part 8 - OO concepts</title>
-    <updated>2024-05-14T11:31:21.000Z</updated>
-    <author>
-      <name>Jayesh Bhoot</name>
-    </author>
-    <content type="html">&lt;p&gt;Flip the perspective on tools like interfaces and traits. Don&#39;t see them as a way for objects to share an interface, but as an abstraction over implementations.&lt;/p&gt;
+      <id>urn:uuid:b1319873-65a5-49e3-82aa-334e3fb7e353</id>
+      <title type="html">Effective Scala, part 8 - OO concepts</title>
+      <updated>2024-05-14T11:31:21.000Z</updated>
+      <author>
+        <name>Jayesh Bhoot</name>
+      </author>
+      <content type="html">&lt;p&gt;Flip the perspective on tools like interfaces and traits. Don&#39;t see them as a way for objects to share an interface, but as an abstraction over implementations.&lt;/p&gt;
 
 &lt;p&gt;So, not: DatabaseAccess -&amp;gt; (InMemoryDatabase, PhysicalDatabase)&lt;/p&gt;
 
@@ -1685,20 +1724,20 @@ $ uuidgen | tr &quot;[:upper:]&quot; &quot;[:lower:]&quot;
 &lt;p&gt;- DatabaseAccess allows various databases to share the interface.&lt;/p&gt;
 
 &lt;p&gt;The former encourages the view/use of interface as an abstraction over implementation.&lt;/p&gt;</content>
-    <link href="/2024/effective-scala-8-oop"/>
-    <summary type="html">Flip the perspective on tools like interfaces and traits. Don&#39;t see them as a way for objects to share an interface, but as an abstraction over implementations.</summary>
-    <category term="Effective Scala series" label="Effective Scala series" />
+      <link href="/2024/effective-scala-8-oop"/>
+      <summary type="html">Flip the perspective on tools like interfaces and traits. Don&#39;t see them as a way for objects to share an interface, but as an abstraction over implementations.</summary>
+      <category term="Effective Scala series" label="Effective Scala series" />
 <category term="OOP" label="OOP" />
-    <published>2024-05-14T11:31:21.000Z</published>
-  </entry>
+      <published>2024-05-14T11:31:21.000Z</published>
+    </entry>
 <entry>
-    <id>urn:uuid:5a99b823-fa04-4e97-b94f-a0e57f0f879a</id>
-    <title type="html">Series - Effective Programming in Scala</title>
-    <updated>2024-05-08T11:31:21.000Z</updated>
-    <author>
-      <name>Jayesh Bhoot</name>
-    </author>
-    <content type="html">&lt;p&gt;This is a series of articles I wrote while going through the Coursera Course &lt;a href=&quot;https://www.coursera.org/learn/effective-scala&quot;&gt;Effective Programming in Scala&lt;/a&gt;.&lt;/p&gt;
+      <id>urn:uuid:5a99b823-fa04-4e97-b94f-a0e57f0f879a</id>
+      <title type="html">Series - Effective Programming in Scala</title>
+      <updated>2024-05-08T11:31:21.000Z</updated>
+      <author>
+        <name>Jayesh Bhoot</name>
+      </author>
+      <content type="html">&lt;p&gt;This is a series of articles I wrote while going through the Coursera Course &lt;a href=&quot;https://www.coursera.org/learn/effective-scala&quot;&gt;Effective Programming in Scala&lt;/a&gt;.&lt;/p&gt;
 
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&quot;/2024/effective-scala-1-elements-of-a-program&quot;&gt;Elements of a program&lt;/a&gt;&lt;/li&gt;
@@ -1709,20 +1748,20 @@ $ uuidgen | tr &quot;[:upper:]&quot; &quot;[:lower:]&quot;
 &lt;li&gt;&lt;a href=&quot;/2024/effective-scala-6-sbt&quot;&gt;Scala Build Tool (SBT)&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;/2024/effective-scala-7-project-entry-point&quot;&gt;Entry point of a Scala project&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;</content>
-    <link href="/2024/effective-scala-series"/>
-    <summary type="html">This is a series of articles I wrote while going through the Coursera Course &lt;a href=&quot;https://www.coursera.org/learn/effective-scala&quot;&gt;Effective Programming in Scala&lt;/a&gt;.</summary>
-    <category term="Scala" label="Scala" />
+      <link href="/2024/effective-scala-series"/>
+      <summary type="html">This is a series of articles I wrote while going through the Coursera Course &lt;a href=&quot;https://www.coursera.org/learn/effective-scala&quot;&gt;Effective Programming in Scala&lt;/a&gt;.</summary>
+      <category term="Scala" label="Scala" />
 <category term="Effective Scala series" label="Effective Scala series" />
-    <published>2024-05-08T11:31:21.000Z</published>
-  </entry>
+      <published>2024-05-08T11:31:21.000Z</published>
+    </entry>
 <entry>
-    <id>urn:uuid:3194d9ee-2397-4b1a-ba7a-125dbe10fb30</id>
-    <title type="html">Effective Scala, part 7 - entry point of a project</title>
-    <updated>2024-05-07T11:31:21.000Z</updated>
-    <author>
-      <name>Jayesh Bhoot</name>
-    </author>
-    <content type="html">&lt;p&gt;While a scala worksheet are evaluated from top to bottom, a scala project needs an entry point.&lt;/p&gt;
+      <id>urn:uuid:3194d9ee-2397-4b1a-ba7a-125dbe10fb30</id>
+      <title type="html">Effective Scala, part 7 - entry point of a project</title>
+      <updated>2024-05-07T11:31:21.000Z</updated>
+      <author>
+        <name>Jayesh Bhoot</name>
+      </author>
+      <content type="html">&lt;p&gt;While a scala worksheet are evaluated from top to bottom, a scala project needs an entry point.&lt;/p&gt;
 
 &lt;p&gt;Only two requirements:&lt;/p&gt;
 
@@ -1740,19 +1779,19 @@ $ uuidgen | tr &quot;[:upper:]&quot; &quot;[:lower:]&quot;
 
 &lt;p&gt;A source file in a project cannot contain top-level statements (e.g., &lt;code&gt;println&lt;/code&gt;), only top-level definitions (&lt;code&gt;def&lt;/code&gt;, &lt;code&gt;val&lt;/code&gt;, &lt;code&gt;var&lt;/code&gt;, &lt;code&gt;trait&lt;/code&gt;, &lt;code&gt;object&lt;/code&gt;, &lt;code&gt;class&lt;/code&gt; definitions)
 .&lt;/p&gt;</content>
-    <link href="/2024/effective-scala-7-project-entry-point"/>
-    <summary type="html">While a scala worksheet are evaluated from top to bottom, a scala project needs an entry point.</summary>
-    <category term="Effective Scala series" label="Effective Scala series" />
-    <published>2024-05-07T11:31:21.000Z</published>
-  </entry>
+      <link href="/2024/effective-scala-7-project-entry-point"/>
+      <summary type="html">While a scala worksheet are evaluated from top to bottom, a scala project needs an entry point.</summary>
+      <category term="Effective Scala series" label="Effective Scala series" />
+      <published>2024-05-07T11:31:21.000Z</published>
+    </entry>
 <entry>
-    <id>urn:uuid:b84ce392-affe-484b-a5eb-fde46cdd0ad8</id>
-    <title type="html">Effective Scala, part 6 - Scala Build Tool (SBT)</title>
-    <updated>2024-05-06T11:31:21.000Z</updated>
-    <author>
-      <name>Jayesh Bhoot</name>
-    </author>
-    <content type="html">&lt;div class=&quot;toc&quot;&gt;&lt;h2 id=&quot;table-of-contents&quot;&gt;Table of contents&lt;/h2&gt;&lt;ol class=&quot;toc-1&quot;&gt;&lt;li&gt;&lt;a href=&quot;#table-of-contents&quot;&gt;Table of contents&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#configurations-in-build-sbt&quot;&gt;Configurations in &lt;code&gt;build.sbt&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#scoping-a-setting&quot;&gt;Scoping a Setting&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#comments&quot;&gt;Comments&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;
+      <id>urn:uuid:b84ce392-affe-484b-a5eb-fde46cdd0ad8</id>
+      <title type="html">Effective Scala, part 6 - Scala Build Tool (SBT)</title>
+      <updated>2024-05-06T11:31:21.000Z</updated>
+      <author>
+        <name>Jayesh Bhoot</name>
+      </author>
+      <content type="html">&lt;div class=&quot;toc&quot;&gt;&lt;h2 id=&quot;table-of-contents&quot;&gt;Table of contents&lt;/h2&gt;&lt;ol class=&quot;toc-1&quot;&gt;&lt;li&gt;&lt;a href=&quot;#table-of-contents&quot;&gt;Table of contents&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#configurations-in-build-sbt&quot;&gt;Configurations in &lt;code&gt;build.sbt&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#scoping-a-setting&quot;&gt;Scoping a Setting&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#comments&quot;&gt;Comments&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;code&gt;src/project&lt;/code&gt; dir contains configuration about SBT - &lt;code&gt;build.properties&lt;/code&gt; to specify sbt version, &lt;code&gt;plugins.sbt&lt;/code&gt; to specify sbt plugins, and so on.&lt;/p&gt;
 
@@ -1781,19 +1820,19 @@ $ uuidgen | tr &quot;[:upper:]&quot; &quot;[:lower:]&quot;
 &lt;/ul&gt;
 
 &lt;p&gt;Axes can be combined too: &lt;code&gt;subProject / Compile / unmanagedSources / includeFilter&lt;/code&gt;. I think the order is: &lt;strong&gt;project / configuration / task / key&lt;/strong&gt;.&lt;/p&gt;</content>
-    <link href="/2024/effective-scala-6-sbt"/>
-    <summary type="html">&lt;code&gt;src/project&lt;/code&gt; dir contains configuration about SBT - &lt;code&gt;build.properties&lt;/code&gt; to specify sbt version, &lt;code&gt;plugins.sbt&lt;/code&gt; to specify sbt plugins, and so on.</summary>
-    <category term="Effective Scala series" label="Effective Scala series" />
-    <published>2024-05-06T11:31:21.000Z</published>
-  </entry>
+      <link href="/2024/effective-scala-6-sbt"/>
+      <summary type="html">&lt;code&gt;src/project&lt;/code&gt; dir contains configuration about SBT - &lt;code&gt;build.properties&lt;/code&gt; to specify sbt version, &lt;code&gt;plugins.sbt&lt;/code&gt; to specify sbt plugins, and so on.</summary>
+      <category term="Effective Scala series" label="Effective Scala series" />
+      <published>2024-05-06T11:31:21.000Z</published>
+    </entry>
 <entry>
-    <id>urn:uuid:b62ea789-d0e9-4e7f-9b0e-40d17322bef7</id>
-    <title type="html">Effective Scala, part 5 - collections</title>
-    <updated>2024-04-24T11:31:21.000Z</updated>
-    <author>
-      <name>Jayesh Bhoot</name>
-    </author>
-    <content type="html">&lt;div class=&quot;toc&quot;&gt;&lt;h2 id=&quot;table-of-contents&quot;&gt;Table of contents&lt;/h2&gt;&lt;ol class=&quot;toc-1&quot;&gt;&lt;li&gt;&lt;a href=&quot;#table-of-contents&quot;&gt;Table of contents&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#infix-construct-operators&quot;&gt;Infix construct operators&lt;/a&gt;&lt;ol class=&quot;toc-2&quot;&gt;&lt;li&gt;&lt;a href=&quot;#immutable-operators&quot;&gt;Immutable operators&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#mutable-operators&quot;&gt;Mutable operators&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#list&quot;&gt;List&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#option&quot;&gt;Option&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#comments&quot;&gt;Comments&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;
+      <id>urn:uuid:b62ea789-d0e9-4e7f-9b0e-40d17322bef7</id>
+      <title type="html">Effective Scala, part 5 - collections</title>
+      <updated>2024-04-24T11:31:21.000Z</updated>
+      <author>
+        <name>Jayesh Bhoot</name>
+      </author>
+      <content type="html">&lt;div class=&quot;toc&quot;&gt;&lt;h2 id=&quot;table-of-contents&quot;&gt;Table of contents&lt;/h2&gt;&lt;ol class=&quot;toc-1&quot;&gt;&lt;li&gt;&lt;a href=&quot;#table-of-contents&quot;&gt;Table of contents&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#infix-construct-operators&quot;&gt;Infix construct operators&lt;/a&gt;&lt;ol class=&quot;toc-2&quot;&gt;&lt;li&gt;&lt;a href=&quot;#immutable-operators&quot;&gt;Immutable operators&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#mutable-operators&quot;&gt;Mutable operators&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#list&quot;&gt;List&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#option&quot;&gt;Option&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#comments&quot;&gt;Comments&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;
 
 &lt;p&gt;Operations on collections can be classified into:&lt;/p&gt;
 
@@ -1836,36 +1875,36 @@ $ uuidgen | tr &quot;[:upper:]&quot; &quot;[:lower:]&quot;
 &lt;p&gt;This explains why Option type has a &lt;code&gt;map&lt;/code&gt; or &lt;code&gt;filter&lt;/code&gt; operations even in OCaml.&lt;/p&gt;
 
 &lt;p&gt;No indexed access (&lt;code&gt;opt(0)&lt;/code&gt;) though, understandably.&lt;/p&gt;</content>
-    <link href="/2024/effective-scala-5-collections"/>
-    <summary type="html">Operations on collections can be classified into:</summary>
-    <category term="Effective Scala series" label="Effective Scala series" />
-    <published>2024-04-24T11:31:21.000Z</published>
-  </entry>
+      <link href="/2024/effective-scala-5-collections"/>
+      <summary type="html">Operations on collections can be classified into:</summary>
+      <category term="Effective Scala series" label="Effective Scala series" />
+      <published>2024-04-24T11:31:21.000Z</published>
+    </entry>
 <entry>
-    <id>urn:uuid:af3fbc76-728b-45ac-9c02-886b7aa2db68</id>
-    <title type="html">Effective Scala, part 4 - function v/s method</title>
-    <updated>2024-04-21T11:31:21.000Z</updated>
-    <author>
-      <name>Jayesh Bhoot</name>
-    </author>
-    <content type="html">&lt;p&gt;A function is a value in Scala, while a method is not. So the former can be passed as a parameter of a function or a method, and can be returned as a value. Method cannot do any of those.&lt;/p&gt;
+      <id>urn:uuid:af3fbc76-728b-45ac-9c02-886b7aa2db68</id>
+      <title type="html">Effective Scala, part 4 - function v/s method</title>
+      <updated>2024-04-21T11:31:21.000Z</updated>
+      <author>
+        <name>Jayesh Bhoot</name>
+      </author>
+      <content type="html">&lt;p&gt;A function is a value in Scala, while a method is not. So the former can be passed as a parameter of a function or a method, and can be returned as a value. Method cannot do any of those.&lt;/p&gt;
 
 &lt;p&gt;A function is a value in Scala. All values are objects in Scala. An object can have methods. So a function in Scala can have methods.&lt;/p&gt;
 
 &lt;p&gt;Any function in Scala has a default &lt;code&gt;apply&lt;/code&gt; method. &lt;code&gt;inc(1)&lt;/code&gt; is a shorthand for &lt;code&gt;inc.apply(1)&lt;/code&gt;.&lt;/p&gt;</content>
-    <link href="/2024/effective-scala-4-method-vs-function"/>
-    <summary type="html">A function is a value in Scala, while a method is not. So the former can be passed as a parameter of a function or a method, and can be returned as a value. Method cannot do any of those.</summary>
-    <category term="Effective Scala series" label="Effective Scala series" />
-    <published>2024-04-21T11:31:21.000Z</published>
-  </entry>
+      <link href="/2024/effective-scala-4-method-vs-function"/>
+      <summary type="html">A function is a value in Scala, while a method is not. So the former can be passed as a parameter of a function or a method, and can be returned as a value. Method cannot do any of those.</summary>
+      <category term="Effective Scala series" label="Effective Scala series" />
+      <published>2024-04-21T11:31:21.000Z</published>
+    </entry>
 <entry>
-    <id>urn:uuid:63a0e01e-eacb-486e-9f72-959cc2ccb742</id>
-    <title type="html">Effective Scala, part 3 - compatibility roulette</title>
-    <updated>2024-04-19T11:31:21.000Z</updated>
-    <author>
-      <name>Jayesh Bhoot</name>
-    </author>
-    <content type="html">&lt;div class=&quot;toc&quot;&gt;&lt;h2 id=&quot;table-of-contents&quot;&gt;Table of contents&lt;/h2&gt;&lt;ol class=&quot;toc-1&quot;&gt;&lt;li&gt;&lt;a href=&quot;#table-of-contents&quot;&gt;Table of contents&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#problem&quot;&gt;Problem&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#attempt-1&quot;&gt;Attempt 1&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#attempt-2&quot;&gt;Attempt 2&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#tl-dr&quot;&gt;TL;DR&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#conclusion&quot;&gt;Conclusion&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#comments&quot;&gt;Comments&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;
+      <id>urn:uuid:63a0e01e-eacb-486e-9f72-959cc2ccb742</id>
+      <title type="html">Effective Scala, part 3 - compatibility roulette</title>
+      <updated>2024-04-19T11:31:21.000Z</updated>
+      <author>
+        <name>Jayesh Bhoot</name>
+      </author>
+      <content type="html">&lt;div class=&quot;toc&quot;&gt;&lt;h2 id=&quot;table-of-contents&quot;&gt;Table of contents&lt;/h2&gt;&lt;ol class=&quot;toc-1&quot;&gt;&lt;li&gt;&lt;a href=&quot;#table-of-contents&quot;&gt;Table of contents&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#problem&quot;&gt;Problem&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#attempt-1&quot;&gt;Attempt 1&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#attempt-2&quot;&gt;Attempt 2&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#tl-dr&quot;&gt;TL;DR&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#conclusion&quot;&gt;Conclusion&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#comments&quot;&gt;Comments&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;
 
 &lt;p&gt;I am going through the course &lt;a href=&quot;https://www.coursera.org/learn/effective-scala&quot;&gt;Effective Programming in Scala&lt;/a&gt; on Coursera, and ran into build import errors in the very first assignment (fireworks).&lt;/p&gt;
 
@@ -1932,34 +1971,34 @@ sbt.version=1.8.2&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;I hope this was the correct solution.&lt;/p&gt;
 
 &lt;p&gt;As people who make tools to make people&#39;s lives easier, we sure love to torture ourselves with our own tools.&lt;/p&gt;</content>
-    <link href="/2024/effective-scala-3-compatibility-roulette"/>
-    <summary type="html">I am going through the course &lt;a href=&quot;https://www.coursera.org/learn/effective-scala&quot;&gt;Effective Programming in Scala&lt;/a&gt; on Coursera, and ran into build import errors in the very first assignment (fireworks).</summary>
-    <category term="Effective Scala series" label="Effective Scala series" />
-    <published>2024-04-19T11:31:21.000Z</published>
-  </entry>
+      <link href="/2024/effective-scala-3-compatibility-roulette"/>
+      <summary type="html">I am going through the course &lt;a href=&quot;https://www.coursera.org/learn/effective-scala&quot;&gt;Effective Programming in Scala&lt;/a&gt; on Coursera, and ran into build import errors in the very first assignment (fireworks).</summary>
+      <category term="Effective Scala series" label="Effective Scala series" />
+      <published>2024-04-19T11:31:21.000Z</published>
+    </entry>
 <entry>
-    <id>urn:uuid:321f0aca-5212-4b8b-8994-946cac15316f</id>
-    <title type="html">Effective Scala, part 2 - domain modelling</title>
-    <updated>2024-04-16T11:31:21.000Z</updated>
-    <author>
-      <name>Jayesh Bhoot</name>
-    </author>
-    <content type="html">&lt;p&gt;Finding the &lt;em&gt;right&lt;/em&gt; level of abstraction is more important than the best level of abstraction.&lt;/p&gt;
+      <id>urn:uuid:321f0aca-5212-4b8b-8994-946cac15316f</id>
+      <title type="html">Effective Scala, part 2 - domain modelling</title>
+      <updated>2024-04-16T11:31:21.000Z</updated>
+      <author>
+        <name>Jayesh Bhoot</name>
+      </author>
+      <content type="html">&lt;p&gt;Finding the &lt;em&gt;right&lt;/em&gt; level of abstraction is more important than the best level of abstraction.&lt;/p&gt;
 
 &lt;p&gt;For example, in a problem involving doors and windows and facades, if the domain is constrained to only deal with surface area, then modelling the doors and windows and facade in terms of &lt;strong&gt;Rectangle&lt;/strong&gt; is the right level of abstraction instead of modelling them as Door, Window, and Facade respectively.&lt;/p&gt;</content>
-    <link href="/2024/effective-scala-2-domain-modelling"/>
-    <summary type="html">Finding the &lt;em&gt;right&lt;/em&gt; level of abstraction is more important than the best level of abstraction.</summary>
-    <category term="Effective Scala series" label="Effective Scala series" />
-    <published>2024-04-16T11:31:21.000Z</published>
-  </entry>
+      <link href="/2024/effective-scala-2-domain-modelling"/>
+      <summary type="html">Finding the &lt;em&gt;right&lt;/em&gt; level of abstraction is more important than the best level of abstraction.</summary>
+      <category term="Effective Scala series" label="Effective Scala series" />
+      <published>2024-04-16T11:31:21.000Z</published>
+    </entry>
 <entry>
-    <id>urn:uuid:7baad03d-26bd-44b2-a645-36b00f7707a1</id>
-    <title type="html">Effective Scala, part 1 - elements of a program</title>
-    <updated>2024-04-15T16:31:21.000Z</updated>
-    <author>
-      <name>Jayesh Bhoot</name>
-    </author>
-    <content type="html">&lt;div class=&quot;toc&quot;&gt;&lt;h2 id=&quot;table-of-contents&quot;&gt;Table of contents&lt;/h2&gt;&lt;ol class=&quot;toc-1&quot;&gt;&lt;li&gt;&lt;a href=&quot;#table-of-contents&quot;&gt;Table of contents&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#value--or-data-in-this-context-&quot;&gt;Value (or Data in this context)&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#literal&quot;&gt;Literal&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#-data--type&quot;&gt;(Data) Type&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#expression&quot;&gt;Expression&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#program&quot;&gt;Program&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#another-perspective-on-type&quot;&gt;Another perspective on Type&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#comments&quot;&gt;Comments&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;
+      <id>urn:uuid:7baad03d-26bd-44b2-a645-36b00f7707a1</id>
+      <title type="html">Effective Scala, part 1 - elements of a program</title>
+      <updated>2024-04-15T16:31:21.000Z</updated>
+      <author>
+        <name>Jayesh Bhoot</name>
+      </author>
+      <content type="html">&lt;div class=&quot;toc&quot;&gt;&lt;h2 id=&quot;table-of-contents&quot;&gt;Table of contents&lt;/h2&gt;&lt;ol class=&quot;toc-1&quot;&gt;&lt;li&gt;&lt;a href=&quot;#table-of-contents&quot;&gt;Table of contents&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#value--or-data-in-this-context-&quot;&gt;Value (or Data in this context)&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#literal&quot;&gt;Literal&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#-data--type&quot;&gt;(Data) Type&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#expression&quot;&gt;Expression&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#program&quot;&gt;Program&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#another-perspective-on-type&quot;&gt;Another perspective on Type&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#comments&quot;&gt;Comments&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;value--or-data-in-this-context-&quot;&gt;Value (or Data in this context)&lt;/h2&gt;
 
@@ -2030,19 +2069,19 @@ parameter.&lt;/p&gt;
 
 &lt;p&gt;If you try to apply an operation to an expression,
 whose type does not provide such an operation, it&#39;s an error.&lt;/p&gt;</content>
-    <link href="/2024/effective-scala-1-elements-of-a-program"/>
-    <summary type="html">A value is the representation of some entity that can be manipulated by a program.</summary>
-    <category term="Effective Scala series" label="Effective Scala series" />
-    <published>2024-04-15T16:31:21.000Z</published>
-  </entry>
+      <link href="/2024/effective-scala-1-elements-of-a-program"/>
+      <summary type="html">A value is the representation of some entity that can be manipulated by a program.</summary>
+      <category term="Effective Scala series" label="Effective Scala series" />
+      <published>2024-04-15T16:31:21.000Z</published>
+    </entry>
 <entry>
-    <id>urn:uuid:6ac9fa5c-7838-41ef-ad83-d460315fa18c</id>
-    <title type="html">An overview of OCaml editor tooling</title>
-    <updated>2024-04-15T11:31:21.000Z</updated>
-    <author>
-      <name>Jayesh Bhoot</name>
-    </author>
-    <content type="html">&lt;div class=&quot;toc&quot;&gt;&lt;h2 id=&quot;table-of-contents&quot;&gt;Table of contents&lt;/h2&gt;&lt;ol class=&quot;toc-1&quot;&gt;&lt;li&gt;&lt;a href=&quot;#table-of-contents&quot;&gt;Table of contents&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#relevant-background&quot;&gt;Relevant background&lt;/a&gt;&lt;ol class=&quot;toc-2&quot;&gt;&lt;li&gt;&lt;a href=&quot;#package-and-build-tooling&quot;&gt;Package and build tooling&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#editor-service---merlin&quot;&gt;Editor service - &lt;strong&gt;Merlin&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#editor-service---lsp&quot;&gt;Editor service - LSP&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#how-everything-comes-together&quot;&gt;How everything comes together&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#merlin-v-s-ocaml-lsp&quot;&gt;merlin v/s ocaml-lsp&lt;/a&gt;&lt;ol class=&quot;toc-3&quot;&gt;&lt;li&gt;&lt;a href=&quot;#feature-parity&quot;&gt;Feature parity&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#dependency-on-dune&quot;&gt;Dependency on dune&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#speed&quot;&gt;Speed&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#editing-setups&quot;&gt;Editing setups&lt;/a&gt;&lt;ol class=&quot;toc-2&quot;&gt;&lt;li&gt;&lt;a href=&quot;#official--popular-setups&quot;&gt;Official, popular setups&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#unofficial--popular-setups&quot;&gt;Unofficial, popular setups&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#worthy-outliers&quot;&gt;Worthy outliers&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#my-excursions&quot;&gt;My excursions&lt;/a&gt;&lt;ol class=&quot;toc-2&quot;&gt;&lt;li&gt;&lt;a href=&quot;#merlin---emacs&quot;&gt;merlin + emacs&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#merlin---vim&quot;&gt;merlin + vim&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#ocaml-lsp---vscode&quot;&gt;ocaml-lsp + vscode&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#ocaml-lsp---neovim&quot;&gt;ocaml-lsp + neovim&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#ocaml-lsp---helix&quot;&gt;ocaml-lsp + helix&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#conclusion&quot;&gt;Conclusion&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#comments&quot;&gt;Comments&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;
+      <id>urn:uuid:6ac9fa5c-7838-41ef-ad83-d460315fa18c</id>
+      <title type="html">An overview of OCaml editor tooling</title>
+      <updated>2024-04-15T11:31:21.000Z</updated>
+      <author>
+        <name>Jayesh Bhoot</name>
+      </author>
+      <content type="html">&lt;div class=&quot;toc&quot;&gt;&lt;h2 id=&quot;table-of-contents&quot;&gt;Table of contents&lt;/h2&gt;&lt;ol class=&quot;toc-1&quot;&gt;&lt;li&gt;&lt;a href=&quot;#table-of-contents&quot;&gt;Table of contents&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#relevant-background&quot;&gt;Relevant background&lt;/a&gt;&lt;ol class=&quot;toc-2&quot;&gt;&lt;li&gt;&lt;a href=&quot;#package-and-build-tooling&quot;&gt;Package and build tooling&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#editor-service---merlin&quot;&gt;Editor service - &lt;strong&gt;Merlin&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#editor-service---lsp&quot;&gt;Editor service - LSP&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#how-everything-comes-together&quot;&gt;How everything comes together&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#merlin-v-s-ocaml-lsp&quot;&gt;merlin v/s ocaml-lsp&lt;/a&gt;&lt;ol class=&quot;toc-3&quot;&gt;&lt;li&gt;&lt;a href=&quot;#feature-parity&quot;&gt;Feature parity&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#dependency-on-dune&quot;&gt;Dependency on dune&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#speed&quot;&gt;Speed&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#editing-setups&quot;&gt;Editing setups&lt;/a&gt;&lt;ol class=&quot;toc-2&quot;&gt;&lt;li&gt;&lt;a href=&quot;#official--popular-setups&quot;&gt;Official, popular setups&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#unofficial--popular-setups&quot;&gt;Unofficial, popular setups&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#worthy-outliers&quot;&gt;Worthy outliers&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#my-excursions&quot;&gt;My excursions&lt;/a&gt;&lt;ol class=&quot;toc-2&quot;&gt;&lt;li&gt;&lt;a href=&quot;#merlin---emacs&quot;&gt;merlin + emacs&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#merlin---vim&quot;&gt;merlin + vim&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#ocaml-lsp---vscode&quot;&gt;ocaml-lsp + vscode&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#ocaml-lsp---neovim&quot;&gt;ocaml-lsp + neovim&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#ocaml-lsp---helix&quot;&gt;ocaml-lsp + helix&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#conclusion&quot;&gt;Conclusion&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#comments&quot;&gt;Comments&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;relevant-background&quot;&gt;Relevant background&lt;/h2&gt;
 
@@ -2226,19 +2265,19 @@ Press ENTER or type command to continue&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;To vim lovers, I recommend the ocaml-lsp + neovim route.&lt;/p&gt;
 
 &lt;p&gt;To emacs lovers, I recommend the ocaml-lsp + emacs route.&lt;/p&gt;</content>
-    <link href="/2024/editor-tooling-in-ocaml"/>
-    <summary type="html">For a small community, OCaml ecosystem is quite rich, maybe too rich, in editor tooling. I have gone through some options over time. Here is an overview for my future self.</summary>
-    <category term="OCaml" label="OCaml" />
-    <published>2024-04-15T11:31:21.000Z</published>
-  </entry>
+      <link href="/2024/editor-tooling-in-ocaml"/>
+      <summary type="html">For a small community, OCaml ecosystem is quite rich, maybe too rich, in editor tooling. I have gone through some options over time. Here is an overview for my future self.</summary>
+      <category term="OCaml" label="OCaml" />
+      <published>2024-04-15T11:31:21.000Z</published>
+    </entry>
 <entry>
-    <id>urn:uuid:aa8b98ca-36f9-4a95-9b18-2b8a75335e17</id>
-    <title type="html">Memorising branch order in git rebase</title>
-    <updated>2024-03-05T11:31:21.000Z</updated>
-    <author>
-      <name>Jayesh Bhoot</name>
-    </author>
-    <content type="html">&lt;p&gt;In a &lt;code&gt;git rebase x&lt;/code&gt; command, is &lt;code&gt;x&lt;/code&gt; being rebased on the current branch, or vice versa?&lt;/p&gt;
+      <id>urn:uuid:aa8b98ca-36f9-4a95-9b18-2b8a75335e17</id>
+      <title type="html">Memorising branch order in git rebase</title>
+      <updated>2024-03-05T11:31:21.000Z</updated>
+      <author>
+        <name>Jayesh Bhoot</name>
+      </author>
+      <content type="html">&lt;p&gt;In a &lt;code&gt;git rebase x&lt;/code&gt; command, is &lt;code&gt;x&lt;/code&gt; being rebased on the current branch, or vice versa?&lt;/p&gt;
 
 &lt;p&gt;I mentally always read &lt;i&gt;rebase&lt;/i&gt; as &lt;i&gt;rebase on top of&lt;/i&gt;.&lt;/p&gt;
 
@@ -2251,19 +2290,19 @@ Press ENTER or type command to continue&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;So &lt;code&gt;git rebase master feat/x&lt;/code&gt; is actually &lt;code&gt;git checkout feat/x &amp;amp;&amp;amp; git rebase master&lt;/code&gt; . So the reading &lt;i&gt;git rebase on top of master&lt;/i&gt; still applies.&lt;/p&gt;
 
 &lt;p&gt;A bit clunky, but good enough for me.&lt;/p&gt;</content>
-    <link href="/2024/memorising-git-rebase"/>
-    <summary type="html">In a &lt;code&gt;git rebase x&lt;/code&gt; command, is &lt;code&gt;x&lt;/code&gt; being rebased on the current branch, or vice versa?</summary>
-    <category term="Git" label="Git" />
-    <published>2024-03-05T11:31:21.000Z</published>
-  </entry>
+      <link href="/2024/memorising-git-rebase"/>
+      <summary type="html">In a &lt;code&gt;git rebase x&lt;/code&gt; command, is &lt;code&gt;x&lt;/code&gt; being rebased on the current branch, or vice versa?</summary>
+      <category term="Git" label="Git" />
+      <published>2024-03-05T11:31:21.000Z</published>
+    </entry>
 <entry>
-    <id>urn:uuid:972047d6-1709-42ab-b18e-fa68f6a760b5</id>
-    <title type="html">&lt;del&gt;I switched to fish shell&lt;/del&gt; Nope. Back to bash.</title>
-    <updated>2024-02-06T11:31:21.000Z</updated>
-    <author>
-      <name>Jayesh Bhoot</name>
-    </author>
-    <content type="html">&lt;div class=&quot;toc&quot;&gt;&lt;h2 id=&quot;table-of-contents&quot;&gt;Table of contents&lt;/h2&gt;&lt;ol class=&quot;toc-1&quot;&gt;&lt;li&gt;&lt;a href=&quot;#table-of-contents&quot;&gt;Table of contents&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#update--5-may-2024&quot;&gt;Update: 5 May 2024&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#original-article&quot;&gt;Original article&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#comments&quot;&gt;Comments&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;
+      <id>urn:uuid:972047d6-1709-42ab-b18e-fa68f6a760b5</id>
+      <title type="html">&lt;del&gt;I switched to fish shell&lt;/del&gt; Nope. Back to bash.</title>
+      <updated>2024-02-06T11:31:21.000Z</updated>
+      <author>
+        <name>Jayesh Bhoot</name>
+      </author>
+      <content type="html">&lt;div class=&quot;toc&quot;&gt;&lt;h2 id=&quot;table-of-contents&quot;&gt;Table of contents&lt;/h2&gt;&lt;ol class=&quot;toc-1&quot;&gt;&lt;li&gt;&lt;a href=&quot;#table-of-contents&quot;&gt;Table of contents&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#update--5-may-2024&quot;&gt;Update: 5 May 2024&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#original-article&quot;&gt;Original article&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#comments&quot;&gt;Comments&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;update--5-may-2024&quot;&gt;Update: 5 May 2024&lt;/h2&gt;
 
@@ -2299,19 +2338,19 @@ Press ENTER or type command to continue&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;code&gt;zsh&lt;/code&gt; is powerful, and comes with a lot of bells and whistles, most of them do not come out-of-the-box. I need to lug around a few packages (like &lt;code&gt;zsh-completions&lt;/code&gt;) and a lot of configuration. I also need to maintain configuration for &lt;code&gt;fzf&lt;/code&gt; for fuzzy search.&lt;/p&gt;
 
 &lt;p&gt;At the very least, I will stop worrying and wasting time in maintaining parity between bash and zsh configs.&lt;/p&gt;</content>
-    <link href="/2024/switching-to-fish-shell"/>
-    <summary type="html">I have come crawling back to bash. Why?</summary>
-    <category term="Shell" label="Shell" />
-    <published>2024-02-06T11:31:21.000Z</published>
-  </entry>
+      <link href="/2024/switching-to-fish-shell"/>
+      <summary type="html">I have come crawling back to bash. Why?</summary>
+      <category term="Shell" label="Shell" />
+      <published>2024-02-06T11:31:21.000Z</published>
+    </entry>
 <entry>
-    <id>urn:uuid:e5759f6b-3be5-4219-aad2-35e9d8c1ebe2</id>
-    <title type="html">Make an opam local switch and &lt;code&gt;dune init project&lt;/code&gt; work together</title>
-    <updated>2023-12-03T11:31:22.000Z</updated>
-    <author>
-      <name>Jayesh Bhoot</name>
-    </author>
-    <content type="html">&lt;div class=&quot;toc&quot;&gt;&lt;h2 id=&quot;table-of-contents&quot;&gt;Table of contents&lt;/h2&gt;&lt;ol class=&quot;toc-1&quot;&gt;&lt;li&gt;&lt;a href=&quot;#table-of-contents&quot;&gt;Table of contents&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#local-switch-in-opam&quot;&gt;Local switch in opam&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#dune-init-project&quot;&gt;dune init project&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#the-problem&quot;&gt;The problem&lt;/a&gt;&lt;ol class=&quot;toc-2&quot;&gt;&lt;li&gt;&lt;a href=&quot;#attempt-1&quot;&gt;Attempt 1&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#attempt-2&quot;&gt;Attempt 2&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#solution&quot;&gt;Solution&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#what-next-&quot;&gt;What next?&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#comments&quot;&gt;Comments&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;
+      <id>urn:uuid:e5759f6b-3be5-4219-aad2-35e9d8c1ebe2</id>
+      <title type="html">Make an opam local switch and &lt;code&gt;dune init project&lt;/code&gt; work together</title>
+      <updated>2023-12-03T11:31:22.000Z</updated>
+      <author>
+        <name>Jayesh Bhoot</name>
+      </author>
+      <content type="html">&lt;div class=&quot;toc&quot;&gt;&lt;h2 id=&quot;table-of-contents&quot;&gt;Table of contents&lt;/h2&gt;&lt;ol class=&quot;toc-1&quot;&gt;&lt;li&gt;&lt;a href=&quot;#table-of-contents&quot;&gt;Table of contents&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#local-switch-in-opam&quot;&gt;Local switch in opam&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#dune-init-project&quot;&gt;dune init project&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#the-problem&quot;&gt;The problem&lt;/a&gt;&lt;ol class=&quot;toc-2&quot;&gt;&lt;li&gt;&lt;a href=&quot;#attempt-1&quot;&gt;Attempt 1&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#attempt-2&quot;&gt;Attempt 2&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#solution&quot;&gt;Solution&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#what-next-&quot;&gt;What next?&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#comments&quot;&gt;Comments&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;
 
 &lt;p&gt;In the OCaml ecosystem, opam is the most popular package management tool, while dune is the foremost build tool.&lt;/p&gt;
 
@@ -2494,19 +2533,19 @@ is still pointing to the right local switch env.&lt;/p&gt;
 
 &lt;p&gt;There is &lt;a href=&quot;https://discuss.ocaml.org/t/extending-dune-with-package-management/5649&quot;&gt;work under progress&lt;/a&gt; to
 wrap dune around opam, thus making dune as the unifying package management and build solution.&lt;/p&gt;</content>
-    <link href="/2023/opam-local-switch-and-dune-init-project"/>
-    <summary type="html">In the OCaml ecosystem, opam is the most popular package management tool, while dune is the foremost build tool.</summary>
-    <category term="OCaml" label="OCaml" />
-    <published>2023-12-03T11:31:22.000Z</published>
-  </entry>
+      <link href="/2023/opam-local-switch-and-dune-init-project"/>
+      <summary type="html">In the OCaml ecosystem, opam is the most popular package management tool, while dune is the foremost build tool.</summary>
+      <category term="OCaml" label="OCaml" />
+      <published>2023-12-03T11:31:22.000Z</published>
+    </entry>
 <entry>
-    <id>urn:uuid:6e7ebece-1f47-4461-b284-a0094aacf55e</id>
-    <title type="html">Spoonfeeding machine architecture to OCaml toolchain on Apple Silicon</title>
-    <updated>2023-12-01T11:31:22.000Z</updated>
-    <author>
-      <name>Jayesh Bhoot</name>
-    </author>
-    <content type="html">&lt;div class=&quot;toc&quot;&gt;&lt;h2 id=&quot;table-of-contents&quot;&gt;Table of contents&lt;/h2&gt;&lt;ol class=&quot;toc-1&quot;&gt;&lt;li&gt;&lt;a href=&quot;#table-of-contents&quot;&gt;Table of contents&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#problem&quot;&gt;Problem&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#hacky-solution&quot;&gt;Hacky solution&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#update--23-feb-2024----better-solution&quot;&gt;Update (&lt;time datetime=&quot;2024-02-23&quot;&gt;23 Feb 2024&lt;/time&gt;) : Better solution&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#comments&quot;&gt;Comments&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;
+      <id>urn:uuid:6e7ebece-1f47-4461-b284-a0094aacf55e</id>
+      <title type="html">Spoonfeeding machine architecture to OCaml toolchain on Apple Silicon</title>
+      <updated>2023-12-01T11:31:22.000Z</updated>
+      <author>
+        <name>Jayesh Bhoot</name>
+      </author>
+      <content type="html">&lt;div class=&quot;toc&quot;&gt;&lt;h2 id=&quot;table-of-contents&quot;&gt;Table of contents&lt;/h2&gt;&lt;ol class=&quot;toc-1&quot;&gt;&lt;li&gt;&lt;a href=&quot;#table-of-contents&quot;&gt;Table of contents&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#problem&quot;&gt;Problem&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#hacky-solution&quot;&gt;Hacky solution&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#update--23-feb-2024----better-solution&quot;&gt;Update (&lt;time datetime=&quot;2024-02-23&quot;&gt;23 Feb 2024&lt;/time&gt;) : Better solution&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#comments&quot;&gt;Comments&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;problem&quot;&gt;Problem&lt;/h2&gt;
 
@@ -2603,37 +2642,37 @@ underlying architecture, always got &lt;code&gt;x86_64&lt;/code&gt;. &lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://apple.stackexchange.com/a/453954&quot;&gt;From what I understand&lt;/a&gt;, if &lt;i&gt;any&lt;/i&gt; tool or binary across a
 toolchain is configured to run through Rosetta - be it the Terminal.app, or the shell, or a helper binary like &lt;code&gt;uname&lt;/code&gt;
 - then the program using this toolchain could end up using the wrong architecture.&lt;/p&gt;</content>
-    <link href="/2023/fixing-ocaml-compiler-build-on-apple-silicon"/>
-    <summary type="html">OCaml compiler failed to build on my M1 Macbook with Apple&#39;s Silicon architecture.</summary>
-    <category term="OCaml" label="OCaml" />
-    <published>2023-12-01T11:31:22.000Z</published>
-  </entry>
+      <link href="/2023/fixing-ocaml-compiler-build-on-apple-silicon"/>
+      <summary type="html">OCaml compiler failed to build on my M1 Macbook with Apple&#39;s Silicon architecture.</summary>
+      <category term="OCaml" label="OCaml" />
+      <published>2023-12-01T11:31:22.000Z</published>
+    </entry>
 <entry>
-    <id>urn:uuid:bea230bc-0afb-47ac-b73e-631dc8691602</id>
-    <title type="html">List of movies better than their book counterparts</title>
-    <updated>2023-10-09T11:31:22.000Z</updated>
-    <author>
-      <name>Jayesh Bhoot</name>
-    </author>
-    <content type="html">&lt;p&gt; This list will likely (hopefully) remain short. &lt;/p&gt;
+      <id>urn:uuid:bea230bc-0afb-47ac-b73e-631dc8691602</id>
+      <title type="html">List of movies better than their book counterparts</title>
+      <updated>2023-10-09T11:31:22.000Z</updated>
+      <author>
+        <name>Jayesh Bhoot</name>
+      </author>
+      <content type="html">&lt;p&gt; This list will likely (hopefully) remain short. &lt;/p&gt;
 
 &lt;ol reversed=&quot;reversed&quot;&gt;
 &lt;li&gt; Dune series. I felt that words in &lt;i&gt;Dune&lt;/i&gt; (Book 1 of the series) didn&#39;t convey its strongest moments well. &lt;i&gt;Presently&lt;/i&gt;, I am struggling to get into &lt;i&gt;Dune Messiah&lt;/i&gt; (Book 2 of the series). &lt;/li&gt;
 &lt;li&gt; Bullet train (at least when compared to the translated-to-English version of the book)&lt;/li&gt;
 &lt;/ol&gt;</content>
-    <link href="/2023/movie-is-better-than-book"/>
-    <summary type="html">This list will likely (hopefully) remain short.</summary>
-    <category term="Books" label="Books" />
-    <published>2023-10-09T11:31:22.000Z</published>
-  </entry>
+      <link href="/2023/movie-is-better-than-book"/>
+      <summary type="html">This list will likely (hopefully) remain short.</summary>
+      <category term="Books" label="Books" />
+      <published>2023-10-09T11:31:22.000Z</published>
+    </entry>
 <entry>
-    <id>urn:uuid:de454181-6576-46c5-9017-afffb721ff58</id>
-    <title type="html">An elegant triplet of fonts</title>
-    <updated>2023-06-12T11:31:22.000Z</updated>
-    <author>
-      <name>Jayesh Bhoot</name>
-    </author>
-    <content type="html">&lt;p&gt; I use the following set of fonts. &lt;/p&gt;
+      <id>urn:uuid:de454181-6576-46c5-9017-afffb721ff58</id>
+      <title type="html">An elegant triplet of fonts</title>
+      <updated>2023-06-12T11:31:22.000Z</updated>
+      <author>
+        <name>Jayesh Bhoot</name>
+      </author>
+      <content type="html">&lt;p&gt; I use the following set of fonts. &lt;/p&gt;
 
 &lt;table&gt;
 &lt;caption&gt;An elegant triplet of fonts that go together&lt;/caption&gt;
@@ -2695,19 +2734,19 @@ this.&lt;/p&gt;
 &lt;img src=&quot;/static/images/appletvplus-font-test-pt-sans-pass.png&quot;&gt;
 &lt;figcaption&gt;PT Sans distinguishes between uppercase I and lowercase l by putting a tail on l.&lt;/figcaption&gt;
 &lt;/figure&gt;</content>
-    <link href="/2023/an-elegant-triplet-of-fonts"/>
-    <summary type="html">I use the following set of fonts.</summary>
-    <category term="Fonts" label="Fonts" />
-    <published>2023-06-12T11:31:22.000Z</published>
-  </entry>
+      <link href="/2023/an-elegant-triplet-of-fonts"/>
+      <summary type="html">I use the following set of fonts.</summary>
+      <category term="Fonts" label="Fonts" />
+      <published>2023-06-12T11:31:22.000Z</published>
+    </entry>
 <entry>
-    <id>urn:uuid:83afeb98-3ab6-4a2c-a1ea-4601afc53dfb</id>
-    <title type="html">How to mark up a code snippet in HTML</title>
-    <updated>2022-10-06T11:31:21.000Z</updated>
-    <author>
-      <name>Jayesh Bhoot</name>
-    </author>
-    <content type="html">&lt;p&gt;Suppose, we want to mark up the following multi-line snippet of JavaScript code:&lt;/p&gt;
+      <id>urn:uuid:83afeb98-3ab6-4a2c-a1ea-4601afc53dfb</id>
+      <title type="html">How to mark up a code snippet in HTML</title>
+      <updated>2022-10-06T11:31:21.000Z</updated>
+      <author>
+        <name>Jayesh Bhoot</name>
+      </author>
+      <content type="html">&lt;p&gt;Suppose, we want to mark up the following multi-line snippet of JavaScript code:&lt;/p&gt;
 
 &lt;figure&gt;
 &lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;function hello(name) {
@@ -2819,20 +2858,20 @@ the &lt;code&gt;figure&lt;/code&gt; tag that provides an
 alternate description to the contents of the &lt;code&gt;pre&lt;/code&gt; tag.
 &lt;/figcaption&gt;
 &lt;/figure&gt;</content>
-    <link href="/2022/how-to-mark-up-a-code-snippet-in-html"/>
-    <summary type="html">Suppose, we want to mark up the following multi-line snippet of JavaScript code:</summary>
-    <category term="HTML" label="HTML" />
+      <link href="/2022/how-to-mark-up-a-code-snippet-in-html"/>
+      <summary type="html">Suppose, we want to mark up the following multi-line snippet of JavaScript code:</summary>
+      <category term="HTML" label="HTML" />
 <category term="Accessibility" label="Accessibility" />
-    <published>2022-10-06T11:31:21.000Z</published>
-  </entry>
+      <published>2022-10-06T11:31:21.000Z</published>
+    </entry>
 <entry>
-    <id>urn:uuid:8a234ceb-901a-4448-8826-a5e49716c251</id>
-    <title type="html">Location of emacs config</title>
-    <updated>2022-09-24T11:31:21.000Z</updated>
-    <author>
-      <name>Jayesh Bhoot</name>
-    </author>
-    <content type="html">&lt;p&gt;I prefer to keep user configuration inside the standard &lt;code&gt;XDG_CONFIG_HOME&lt;/code&gt;, which typically points to &lt;code&gt;~/.config/&lt;/code&gt;. Emacs also supports &lt;code&gt;XDG_CONFIG_HOME&lt;/code&gt;, but as the &lt;em&gt;last&lt;/em&gt; entry in its list of preferred locations, where it looks for &lt;code&gt;init.el&lt;/code&gt;.&lt;/p&gt;
+      <id>urn:uuid:8a234ceb-901a-4448-8826-a5e49716c251</id>
+      <title type="html">Location of emacs config</title>
+      <updated>2022-09-24T11:31:21.000Z</updated>
+      <author>
+        <name>Jayesh Bhoot</name>
+      </author>
+      <content type="html">&lt;p&gt;I prefer to keep user configuration inside the standard &lt;code&gt;XDG_CONFIG_HOME&lt;/code&gt;, which typically points to &lt;code&gt;~/.config/&lt;/code&gt;. Emacs also supports &lt;code&gt;XDG_CONFIG_HOME&lt;/code&gt;, but as the &lt;em&gt;last&lt;/em&gt; entry in its list of preferred locations, where it looks for &lt;code&gt;init.el&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;The list goes in the order: &lt;code&gt;~/.emacs.el&lt;/code&gt;, &lt;code&gt;~/.emacs&lt;/code&gt;, or &lt;code&gt;~/.emacs.d/init.el&lt;/code&gt;, and &lt;em&gt;then&lt;/em&gt; &lt;code&gt;~/.config/emacs/init.el&lt;/code&gt;.&lt;/p&gt;
 
@@ -2845,19 +2884,19 @@ alternate description to the contents of the &lt;code&gt;pre&lt;/code&gt; tag.
 &lt;p&gt;Now, the XDG location, i.e., &lt;code&gt;~/.config/emacs/&lt;/code&gt; wouldn&#39;t typically exist in a system by default. So emacs would always end up defaulting to &lt;code&gt;~/.emacs.d/&lt;/code&gt;. In order to make it read the XDG location, I always had to manually delete &lt;code&gt;~/.emacs.d/&lt;/code&gt; first.&lt;/p&gt;
 
 &lt;p&gt;So much hassle on every new system or after a fresh emacs installation. So I now just &lt;a href=&quot;https://www.gnu.org/software/stow/&quot;&gt;&lt;code&gt;stow&lt;/code&gt;&lt;/a&gt; my emacs dotfiles to &lt;code&gt;~/.emacs.d&lt;/code&gt;.&lt;/p&gt;</content>
-    <link href="/2022/location-of-emacs-config"/>
-    <summary type="html">After a fresh emacs installation, I always spent a few minutes why emacs wouldn&#39;t pick up my config from &lt;code&gt;~/.config/emacs/init.el&lt;/code&gt;.</summary>
-    <category term="Emacs" label="Emacs" />
-    <published>2022-09-24T11:31:21.000Z</published>
-  </entry>
+      <link href="/2022/location-of-emacs-config"/>
+      <summary type="html">After a fresh emacs installation, I always spent a few minutes why emacs wouldn&#39;t pick up my config from &lt;code&gt;~/.config/emacs/init.el&lt;/code&gt;.</summary>
+      <category term="Emacs" label="Emacs" />
+      <published>2022-09-24T11:31:21.000Z</published>
+    </entry>
 <entry>
-    <id>urn:uuid:49f2ccac-8123-4080-af1c-cd47e7201a75</id>
-    <title type="html">What &lt;code&gt;box-sizing&lt;/code&gt; does</title>
-    <updated>2022-09-17T11:31:21.000Z</updated>
-    <author>
-      <name>Jayesh Bhoot</name>
-    </author>
-    <content type="html">&lt;p&gt;&lt;code&gt;box-sizing&lt;/code&gt; specifies the part of an element&#39;s CSS box, to which the properties &lt;code&gt;width, min-width,
+      <id>urn:uuid:49f2ccac-8123-4080-af1c-cd47e7201a75</id>
+      <title type="html">What &lt;code&gt;box-sizing&lt;/code&gt; does</title>
+      <updated>2022-09-17T11:31:21.000Z</updated>
+      <author>
+        <name>Jayesh Bhoot</name>
+      </author>
+      <content type="html">&lt;p&gt;&lt;code&gt;box-sizing&lt;/code&gt; specifies the part of an element&#39;s CSS box, to which the properties &lt;code&gt;width, min-width,
 max-width,
 height, min-height, max-height&lt;/code&gt; apply.&lt;/p&gt;
 
@@ -2921,21 +2960,21 @@ p {
         margin-top: 1rem;
     }
 &lt;/style&gt;</content>
-    <link href="/2022/box-sizing"/>
-    <summary type="html">&lt;code&gt;box-sizing&lt;/code&gt; specifies the part of an element&#39;s CSS box, to which the properties &lt;code&gt;width, min-width,
+      <link href="/2022/box-sizing"/>
+      <summary type="html">&lt;code&gt;box-sizing&lt;/code&gt; specifies the part of an element&#39;s CSS box, to which the properties &lt;code&gt;width, min-width,
 max-width,
 height, min-height, max-height&lt;/code&gt; apply.</summary>
-    <category term="CSS" label="CSS" />
-    <published>2022-09-17T11:31:21.000Z</published>
-  </entry>
+      <category term="CSS" label="CSS" />
+      <published>2022-09-17T11:31:21.000Z</published>
+    </entry>
 <entry>
-    <id>urn:uuid:913be558-883b-446e-ae0d-6b3cf5d18275</id>
-    <title type="html">Fake SHA256 in a Nix derivation</title>
-    <updated>2022-09-09T11:31:21.000Z</updated>
-    <author>
-      <name>Jayesh Bhoot</name>
-    </author>
-    <content type="html">&lt;p&gt;Discovering the SHA256 hash for a derivation is a chore.&lt;/p&gt;
+      <id>urn:uuid:913be558-883b-446e-ae0d-6b3cf5d18275</id>
+      <title type="html">Fake SHA256 in a Nix derivation</title>
+      <updated>2022-09-09T11:31:21.000Z</updated>
+      <author>
+        <name>Jayesh Bhoot</name>
+      </author>
+      <content type="html">&lt;p&gt;Discovering the SHA256 hash for a derivation is a chore.&lt;/p&gt;
 
 &lt;p&gt;One approach is to fake the hash with zeroes.&lt;/p&gt;
 
@@ -2956,19 +2995,19 @@ correct hash.&lt;/p&gt;
 &lt;p&gt;
 &lt;ins datetime=&quot;2022-10-03&quot;&gt;I found a more memorable variable &lt;code&gt;lib.fakeHash&lt;/code&gt;.&lt;/ins&gt;
 &lt;/p&gt;</content>
-    <link href="/2022/fake-sha256-in-a-nix-derivation"/>
-    <summary type="html">Discovering the SHA256 hash for a derivation is a chore.</summary>
-    <category term="Nix" label="Nix" />
-    <published>2022-09-09T11:31:21.000Z</published>
-  </entry>
+      <link href="/2022/fake-sha256-in-a-nix-derivation"/>
+      <summary type="html">Discovering the SHA256 hash for a derivation is a chore.</summary>
+      <category term="Nix" label="Nix" />
+      <published>2022-09-09T11:31:21.000Z</published>
+    </entry>
 <entry>
-    <id>urn:uuid:5e88869a-3274-4b58-9065-8ffcf0dabab7</id>
-    <title type="html">How to use &lt;i&gt;Hover Click&lt;/i&gt; without animation in GNOME</title>
-    <updated>2020-07-05T11:31:22.000Z</updated>
-    <author>
-      <name>Jayesh Bhoot</name>
-    </author>
-    <content type="html">&lt;p&gt;
+      <id>urn:uuid:5e88869a-3274-4b58-9065-8ffcf0dabab7</id>
+      <title type="html">How to use &lt;i&gt;Hover Click&lt;/i&gt; without animation in GNOME</title>
+      <updated>2020-07-05T11:31:22.000Z</updated>
+      <author>
+        <name>Jayesh Bhoot</name>
+      </author>
+      <content type="html">&lt;p&gt;
 Desktop systems usually provide an accessibility feature, with which a user only has to hover the cursor
 over where he wants to click. The click goes off automatically. In GNOME, this feature is called &lt;i&gt;Hover
 Click&lt;/i&gt;.
@@ -3000,22 +3039,22 @@ animations entirely from Gnome Tweaks:
 &lt;img src=&quot;/static/images/demo-gnome-hover-to-click-animation.gif&quot; alt=&quot;Hover click animation gif demo&quot;&gt;
 &lt;figcaption&gt; Hover Click feature in GNOME, with and without animation&lt;/figcaption&gt;
 &lt;/figure&gt;</content>
-    <link href="/2020/hover-to-click-without-animation-in-gnome"/>
-    <summary type="html">Desktop systems usually provide an accessibility feature, with which a user only has to hover the cursor
+      <link href="/2020/hover-to-click-without-animation-in-gnome"/>
+      <summary type="html">Desktop systems usually provide an accessibility feature, with which a user only has to hover the cursor
 over where he wants to click. The click goes off automatically. In GNOME, this feature is called &lt;i&gt;Hover
 Click&lt;/i&gt;.</summary>
-    <category term="GNOME" label="GNOME" />
+      <category term="GNOME" label="GNOME" />
 <category term="Accessibility" label="Accessibility" />
-    <published>2020-07-05T11:31:22.000Z</published>
-  </entry>
+      <published>2020-07-05T11:31:22.000Z</published>
+    </entry>
 <entry>
-    <id>urn:uuid:5f447c9e-6f5d-4cfd-98e8-e917b0429afd</id>
-    <title type="html">How to write a Firefox add-on in ClojureScript</title>
-    <updated>2020-07-04T11:31:22.000Z</updated>
-    <author>
-      <name>Jayesh Bhoot</name>
-    </author>
-    <content type="html">&lt;div class=&quot;toc&quot;&gt;&lt;h2 id=&quot;table-of-contents&quot;&gt;Table of contents&lt;/h2&gt;&lt;ol class=&quot;toc-1&quot;&gt;&lt;li&gt;&lt;a href=&quot;#table-of-contents&quot;&gt;Table of contents&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#org9a73bf2&quot;&gt;Project Layout&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#org4352a07&quot;&gt;ClojureScript to JavaScript&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#org9d85caf&quot;&gt;Live reload&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#comments&quot;&gt;Comments&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;
+      <id>urn:uuid:5f447c9e-6f5d-4cfd-98e8-e917b0429afd</id>
+      <title type="html">How to write a Firefox add-on in ClojureScript</title>
+      <updated>2020-07-04T11:31:22.000Z</updated>
+      <author>
+        <name>Jayesh Bhoot</name>
+      </author>
+      <content type="html">&lt;div class=&quot;toc&quot;&gt;&lt;h2 id=&quot;table-of-contents&quot;&gt;Table of contents&lt;/h2&gt;&lt;ol class=&quot;toc-1&quot;&gt;&lt;li&gt;&lt;a href=&quot;#table-of-contents&quot;&gt;Table of contents&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#org9a73bf2&quot;&gt;Project Layout&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#org4352a07&quot;&gt;ClojureScript to JavaScript&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#org9d85caf&quot;&gt;Live reload&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#comments&quot;&gt;Comments&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;
 
 &lt;p&gt;
 You can find a sample add-on on my &lt;a href=&quot;https://github.com/jayesh-bhoot/firefox-add-on-in-cljs&quot;&gt;GitHub&lt;/a&gt;.
@@ -3113,9 +3152,9 @@ change.
 
 &lt;pre&gt;&lt;code class=&quot;language-sh&quot;&gt;# in addon folder
 web-ext run --start-url https://www.mozilla.org/en-US/&lt;/code&gt;&lt;/pre&gt;</content>
-    <link href="/2020/firefox-add-on-with-clojurescript"/>
-    <summary type="html">I found writing Firefox add-ons to be a good way to learn the ropes in ClojureScript in a productive manner.</summary>
-    <category term="Firefox add-on" label="Firefox add-on" />
-    <published>2020-07-04T11:31:22.000Z</published>
-  </entry>
-  </feed>
+      <link href="/2020/firefox-add-on-with-clojurescript"/>
+      <summary type="html">I found writing Firefox add-ons to be a good way to learn the ropes in ClojureScript in a productive manner.</summary>
+      <category term="Firefox add-on" label="Firefox add-on" />
+      <published>2020-07-04T11:31:22.000Z</published>
+    </entry>
+    </feed>
