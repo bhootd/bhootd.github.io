@@ -89,17 +89,17 @@ const makeFeed = (entries: readonly Entry[]) => {
     </feed>`;
 }
 
-const main = async () => {
+const main = async (tag: string | undefined) => {
     const jsonStr = await fs.readFile('index.json', { encoding: 'utf8' });
     const jsonFeed = JSON.parse(jsonStr);
     const entriesResult = JsonFeedSchema.safeParse(jsonFeed);
     if (entriesResult.success) {
-        const entries = entriesResult.data;
+        const entries = entriesResult.data.filter(e => tag && e.collections.map(c => c.toLowerCase()).includes(tag.toLowerCase()));
         const atomFeed = makeFeed(entries);
-        await fs.writeFile('site/feed.xml', atomFeed);
+        await fs.writeFile(tag ? `site/feed-${tag.toLowerCase()}.xml` : 'site/feed.xml', atomFeed);
     } else {
         console.error(entriesResult.error);
     }
 }
 
-main();
+main(process.argv[2]);
