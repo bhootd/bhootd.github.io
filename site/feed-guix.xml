@@ -6,7 +6,7 @@
       <author>
         <name>Jayesh Bhoot</name>
       </author>
-      <link href="https://bhoot.dev/feed.xml" rel="self"/>
+      <link href="https://bhoot.dev/feed-guix.xml" rel="self"/>
       <entry>
       <id>urn:uuid:1e8d8aab-5d8a-4f1c-ad1c-6f94cb1377d1</id>
       <title type="html">Improved font rendering in Guix</title>

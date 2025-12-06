@@ -63,7 +63,9 @@ const latestModified = (entries: readonly Entry[]): Date | undefined => {
     }, undefined);
 }
 
-const makeFeed = (entries: readonly Entry[]) => {
+const makeFeedFileName = (tag: string | undefined) => tag ? `feed-${tag.toLowerCase()}.xml` : 'feed.xml';
+
+const makeFeed = (entries: readonly Entry[], tag: string | undefined) => {
     const latestModifiedDate = latestModified(entries);
     const latestModifiedTimeStamp = latestModifiedDate
         ? `<updated>${latestModifiedDate.toISOString()}</updated>`
@@ -74,7 +76,7 @@ const makeFeed = (entries: readonly Entry[]) => {
         .join('\n');
 
     const feedId = baseUrl + "/";
-    const feedUrl = baseUrl + "/feed.xml";
+    const feedUrl = baseUrl + `/${makeFeedFileName(tag)}`;
 
     return `<?xml version="1.0" encoding="utf-8"?>
     <feed xmlns="http://www.w3.org/2005/Atom">
@@ -95,8 +97,8 @@ const main = async (tag: string | undefined) => {
     const entriesResult = JsonFeedSchema.safeParse(jsonFeed);
     if (entriesResult.success) {
         const entries = entriesResult.data.filter(e => tag && e.collections.map(c => c.toLowerCase()).includes(tag.toLowerCase()));
-        const atomFeed = makeFeed(entries);
-        await fs.writeFile(tag ? `site/feed-${tag.toLowerCase()}.xml` : 'site/feed.xml', atomFeed);
+        const atomFeed = makeFeed(entries, tag);
+        await fs.writeFile(`site/${makeFeedFileName(tag)}`, atomFeed);
     } else {
         console.error(entriesResult.error);
     }
