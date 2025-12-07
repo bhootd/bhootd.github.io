@@ -98,7 +98,9 @@ const main = async (tag: string | undefined) => {
     const jsonFeed = JSON.parse(jsonStr);
     const entriesResult = JsonFeedSchema.safeParse(jsonFeed);
     if (entriesResult.success) {
-        const entries = entriesResult.data.filter(e => tag && e.collections.map(c => c.toLowerCase()).includes(tag.toLowerCase()));
+        const entries = tag
+            ? entriesResult.data.filter(e => e.collections.map(c => c.toLowerCase()).includes(tag.toLowerCase()))
+            : entriesResult.data;
         const atomFeed = makeFeed(entries, tag);
         await fs.writeFile(`site/${makeFeedFileName(tag)}`, atomFeed);
     } else {
