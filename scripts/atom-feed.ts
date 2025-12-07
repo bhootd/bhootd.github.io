@@ -39,6 +39,8 @@ const toXmlEntry = (e: Entry) => {
 
     const updated = e.updated ?? e.published;
 
+    const link = baseUrl + e.url;
+
     return `<entry>
       <id>${e.id}</id>
       <title type="html">${escapeHtml(e.title)}</title>
@@ -47,7 +49,7 @@ const toXmlEntry = (e: Entry) => {
         <name>${e.author_name}</name>
       </author>
       <content type="html">${escapeHtml(e.content)}</content>
-      <link href="${e.url}"/>
+      <link href="${link}"/>
       <summary type="html">${escapeHtml(e.excerpt)}</summary>
       ${collections}
       <published>${e.published.toISOString()}</published>
