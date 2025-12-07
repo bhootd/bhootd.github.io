@@ -41,7 +41,7 @@
     &#39;global-environment-variables
     session-environment-service-type
     &#39;((&quot;FREETYPE_PROPERTIES&quot; . &quot;cff:no-stem-darkening=0 cff:darkening-parameters=500,400,1000,350,1500,325,2000,300 autofitter:no-stem-darkening=0 autofitter:darkening-parameters=500,400,1000,350,1500,325,2000,300&quot;))))))&lt;/code&gt;&lt;/pre&gt;</content>
-      <link href="/2025/guix-improved-font-rendering"/>
+      <link href="https://bhoot.dev/2025/guix-improved-font-rendering"/>
       <summary type="html">There is a neat trick to make fonts on Linux look thicker and smoother and sharper. Set the following variable in &lt;code&gt;/etc/environment&lt;/code&gt;:</summary>
       <category term="Guix" label="Guix" />
       <published>2025-11-20T18:43:21.000Z</published>
