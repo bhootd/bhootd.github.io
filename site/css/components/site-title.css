@@ -4,6 +4,7 @@
     text-wrap: balance;
     font-weight: bold;
     margin-block-start: 0;
+    line-height: var(--line-height);
 }
 
 .site-title > * {

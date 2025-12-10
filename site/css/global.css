@@ -61,10 +61,6 @@ body > * + * {
     margin-block-start: 3em;
 }
 
-:is(h1, h2, h3, h4) + * {
-    margin-block-start: 0.75em;
-}
-
 li + li {
   margin-block-start: var(--list-item-proximity);
 }
@@ -110,12 +106,6 @@ h4 {
 :is(h1, h2, h3, h4) {
     font-family: var(--font-sans);
     text-wrap: balance;
-    color: purple;
-}
-
-:is(h2, h3, h4),
-.h-entry h1 {
-  border-bottom: 1px solid lightgray;
 }
 
 h2::before {
@@ -136,8 +126,7 @@ h4::before {
 }
 
 hgroup > h1 ~ p {
-    margin-block-start: 0.25em;
-    text-align: right;
+    color: #64748b;
 }
 
 img,

@@ -85,11 +85,8 @@ HTML.set_attribute(published_link_ele, "href", page_url)
 HTML.append_child(published_link_ele, published_ele)
 HTML.append_child(published_container_ele, published_link_ele)
 
-local category_container_ele = HTML.create_element("p", "Collected in ")
-HTML.add_class(category_container_ele, "cluster")
-HTML.add_class(category_container_ele, "justify-content:flex-end")
-HTML.add_class(category_container_ele, "align-items:center")
-HTML.set_attribute(category_container_ele, "style", "--cluster-gap: 0.25em;")
+HTML.append_child(published_container_ele, HTML.create_text(" in "))
+
 category_list_ele = HTML.select_one(page, "meta[itemprop='p-category']")
 local category_list = HTML.get_attribute(category_list_ele, "content")
 local categories = split(category_list, ",")
@@ -101,7 +98,7 @@ while i do
     local collection_path = make_collection_path(v)
     HTML.set_attribute(category_ele, "href", format("/collections/%s", collection_path))
     HTML.set_attribute(category_ele, "rel", "tag")
-    HTML.append_child(category_container_ele, category_ele)
+    HTML.append_child(published_container_ele, category_ele)
     if v == "Mental model" then
         has_category_mental_model = 1
     end
@@ -114,10 +111,8 @@ if h1_ele ~= nil then
     local hgroup = HTML.create_element('hgroup')
     HTML.wrap(h1_ele, hgroup)
     HTML.append_child(hgroup, published_container_ele)
-    HTML.append_child(hgroup, category_container_ele)
 else
     HTML.prepend_child(article_ele, published_container_ele)
-    HTML.prepend_child(article_ele, category_container_ele)
 end
 
 if has_category_mental_model ~= nil then
