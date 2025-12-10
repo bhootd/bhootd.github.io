@@ -257,7 +257,7 @@ selector = ".placeholder-homepage-header"
 action = "replace_element"
 parse = true
 html = """
-<div class="h-card stack" style="align-items: center;">
+<div class="h-card stack">
   <h1 class="site-title">
     <!-- Content inserted by soupault widget -->
   </h1>
@@ -273,8 +273,8 @@ selector = ".placeholder-header"
 action = "replace_element"
 parse = true
 html = """
-<div class="h-card stack" style="align-items: center;">
-  <p class="site-title text-align:right">
+<div class="h-card stack">
+  <p class="site-title">
     <!-- Content inserted by soupault widget -->
   </p>
   <nav class="main-nav">
@@ -289,7 +289,7 @@ selector = ".main-nav"
 after = ["add-homepage-header", "add-otherpage-header"]
 parse = true
 html = """
-<ul class="cluster" style="justify-content: center;">
+<ul class="cluster">
   <li><a href="/about">About me</a></li>
   <li><a href="/books">Reading</a></li>
   <li><a href="/posts">Writing</a></li>
@@ -320,7 +320,7 @@ selector = "body"
 action = "append_child"
 parse = true
 html = """
-<footer class="stack" style="align-items: center;">
+<footer class="stack">
   <p class="cluster">
     <a href="/about-website">About website</a>
     <a href="/accessibility-statement">Accessibility statement</a> </p>
