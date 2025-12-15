@@ -396,3 +396,12 @@ parse = true
 html = "<script data-goatcounter='https://bhoot.goatcounter.com/count' async src='//gc.zgo.at/count.js'></script>"
 selector = "body"
 action = "append_child"
+
+[widgets.populate-currently-reading]
+widget = "insert_html"
+selector = ".currently-reading"
+action = "replace_element"
+parse = true
+html = """
+<a href="https://www.goodreads.com/book/show/77565.The_Fall_of_Hyperion">The Fall of Hyperion</a> by Dan Simmons
+"""
