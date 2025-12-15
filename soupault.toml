@@ -290,15 +290,15 @@ after = ["add-homepage-header", "add-otherpage-header"]
 parse = true
 html = """
 <ul class="cluster">
-  <li><a href="/about">About me</a></li>
+  <li><a href="/about">Bio</a></li>
   <li><a href="/books">Reading</a></li>
-  <li><a href="/posts">Writing</a></li>
+  <li><a href="/posts">Blog</a></li>
   <!--<li><a href="/articles">Articles</a></li>-->
   <!--<li><a href="/notes">Notes</a></li>-->
-  <li><a href="/collections">Collections</a></li>
+  <!--<li><a href="/collections">Collections</a></li>-->
   <li>Projects</li>
-  <li>Hire</li>
-  <li><a href="/feed.xml">Atom Feed</a></li>
+  <!--<li>Hire</li>-->
+  <li><a href="/feed.xml">Feed</a></li>
 </ul>
 """
 
@@ -309,8 +309,7 @@ after = ["add-homepage-header", "add-otherpage-header"]
 parse = true
 html = """
 <a class="u-url" href="/" rel="author">
-  <span class="site-title-blinker"
-        title="because my last name means 'Ghost' in some Indian languages"><span><span class="p-name">Jayesh <span class="p-nickname p-family-name">Bhoot</span></span><span>&apos;s</span></span> Gh<span class="blinketh-the-first">o</span>st
+  <span class="site-title-blinker" title="because my last name means 'Ghost' in some Indian languages"><span><span class="p-name">Jayesh <span class="p-nickname p-family-name">Bhoot</span></span><span>&apos;s</span></span> Gh<span class="blinketh-the-first">o</span>st
   T<span class="blinketh-the-second">o</span>wn</span></a>
 """
 
