@@ -290,7 +290,7 @@ pre>code {
 }
 
 a {
-    text-decoration-thickness: 2px;
+    text-decoration-thickness: 0.1em;
     text-underline-offset: 4px;
     text-decoration-skip-ink: none;
     /* text-decoration-style: dotted; */
