@@ -18,6 +18,7 @@ p:has(.p-author)+p:has(.dt-published) {
 .p-category {
 }
 
+.e-summary,
 .e-content > p,
 .p-note > p {
     max-inline-size: 55ch;
