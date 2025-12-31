@@ -2,12 +2,94 @@
     <feed xmlns="http://www.w3.org/2005/Atom">
       <id>https://bhoot.dev/</id>
       <title>Jayesh Bhoot's Ghost Town – All Posts</title>
-      <updated>2025-11-20T18:43:21.000Z</updated>
+      <updated>2025-12-27T20:58:56.000Z</updated>
       <author>
         <name>Jayesh Bhoot</name>
       </author>
       <link href="https://bhoot.dev/feed.xml" rel="self"/>
       <entry>
+      <id>urn:uuid:859a810b-58bc-47b2-a8f2-f3d8a5a87574</id>
+      <title type="html">A primer on car insurance (in India)</title>
+      <updated>2025-12-27T20:58:56.000Z</updated>
+      <author>
+        <name>Jayesh Bhoot</name>
+      </author>
+      <content type="html">&lt;h2 id=&quot;the-concept-of-car-insurance&quot;&gt;The concept of car insurance&lt;/h2&gt;
+
+&lt;p&gt;Suppose a mishap occurs that involves your car and someone else. One or more of the following unfortunate outcomes can happen:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Someone&#39;s property is damaged.&lt;/li&gt;
+&lt;li&gt;Someone is harmed, physically or lethally.&lt;/li&gt;
+&lt;li&gt;Your car is damaged, reparably or not.&lt;/li&gt;
+&lt;li&gt;You or your passengers are harmed, physically or lethally.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The concept of car insurance aims to alleviate the first three outcomes. For the fourth, a proper health and life insurance should be in place. &lt;/p&gt;
+
+&lt;h2 id=&quot;damage-to-someone-or-their-property&quot;&gt;Damage to someone or their property&lt;/h2&gt;
+
+&lt;p&gt;The someone involved in the mishap could seek compensation for damages caused to them or their property. A &lt;strong&gt;&lt;dfn&gt;third-party policy (TP)&lt;/dfn&gt;&lt;/strong&gt; covers this damage. A TP is a legal requirement in India so that when someone raises a claim, this policy automatically kicks in.&lt;/p&gt;
+
+&lt;aside&gt;
+&lt;p&gt;Why the name &lt;em&gt;third-party&lt;/em&gt;? Who is the &lt;em&gt;second-party&lt;/em&gt;?&lt;/p&gt;
+
+&lt;p&gt;The name third-party is from the perspective of the insurance provider. According to them, the policyholder is the first party, they (insurance provider) are the second party, while the someone involved in the accident, who also sought compensation, are the third-party.&lt;/p&gt;
+&lt;/aside&gt;
+
+&lt;h2 id=&quot;damage-to-own-car&quot;&gt;Damage to own car&lt;/h2&gt;
+
+&lt;p&gt;An &lt;strong&gt;&lt;dfn&gt;own damage policy&lt;/dfn&gt;&lt;/strong&gt; covers damage to your own car. Fixing a car is an expensive affair. While this coverage is not legally mandated, it makes financial sense to purchase one.&lt;/p&gt;
+
+&lt;p&gt;Much of the insurancebabble orbits the own damage policy.&lt;/p&gt;
+
+&lt;p&gt;There are several ways to get your car damaged - accident resulting in partial damage; accident resulting in irreparable damage, also called &lt;i&gt;total loss&lt;/i&gt;; theft; natural disasters like flood, storm, earthquake, etc.&lt;/p&gt;
+
+&lt;p&gt;A basic own damage policy usually covers the above clauses.&lt;/p&gt;
+
+&lt;p&gt;One can choose to buy &lt;strong&gt;add-ons&lt;/strong&gt; to a basic own damage policy, which provides extra layers of coverage, but also increase the premium. These add-ons are usually offered only for the first 3 to 5 years of a car&#39;s life.&lt;/p&gt;
+
+&lt;h3 id=&quot;zero-depreciation&quot;&gt;Zero depreciation&lt;/h3&gt;
+
+&lt;p&gt;A car is a depreciating asset. The insurer takes this into account, and by default, only pays out at a depreciated rate of the repaired or replaced parts. A &lt;strong&gt;&lt;dfn&gt;zero depreciation add-on&lt;/dfn&gt;&lt;/strong&gt; ensures that the insurer pays out at the full rate.&lt;/p&gt;
+
+&lt;h3 id=&quot;return-to-invoice&quot;&gt;Return to Invoice&lt;/h3&gt;
+
+&lt;p&gt;Depreciation also comes in play in theft or &lt;i&gt;total loss&lt;/i&gt;, when the car has been irreparably damaged. In such an event, the insurer pays out the current market value of the car, i.e., manufacturer price minus cumulative yearly depreciation. This maximum sum set by insurer is called &lt;strong&gt;&lt;dfn&gt;Insured Declared Value&lt;/dfn&gt; (&lt;abbr&gt;IDV&lt;/abbr&gt;)&lt;/strong&gt;. So, a claim of theft or total loss is capped at IDV. Insurers provide a &lt;strong&gt;&lt;dfn&gt;Return to Invoice add-on&lt;/dfn&gt;&lt;/strong&gt; to set the maximum assured value at the original invoice value, including registration cost and road tax.&lt;/p&gt;
+
+&lt;h3 id=&quot;engine-cover&quot;&gt;Engine cover&lt;/h3&gt;
+
+&lt;p&gt;A basic own damage policy also does not cover engine damage caused by water or oil leakage. An &lt;strong&gt;&lt;dfn&gt;Engine Protect add-on&lt;/dfn&gt;&lt;/strong&gt; is required to cover this type of damage. &lt;strong&gt;I am still confused about whether a basic own damage policy would cover any engine damage caused by a flood since it covers damage caused by natural disasters&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;no-claims-bonus&quot;&gt;No Claims Bonus&lt;/h3&gt;
+
+&lt;p&gt;If you didn&#39;t make use of your own damage policy in a year, you become eligible for a 20-25% deducation on the premium at the time of policy renewal. This is essentially the &lt;strong&gt;&lt;dfn&gt;No Claims Bonus&lt;/dfn&gt;&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;comprehensive-policy&quot;&gt;Comprehensive policy&lt;/h2&gt;
+
+&lt;p&gt;You may choose to buy third-party and own damage policies separately, from different insurers. Or you can choose to buy a &lt;strong&gt;&lt;dfn&gt;comprehensive policy&lt;/dfn&gt;&lt;/strong&gt; from an insurer, which includes both of them.&lt;/p&gt;
+
+&lt;h2 id=&quot;how-i-renewed-my-own-damage-policy&quot;&gt;How I renewed my own damage policy&lt;/h2&gt;
+
+&lt;p&gt;My car (Honda Elevate) came with a comprehensive policy issued through the dealership. It was comprised of a 3-year third-party policy and a 1-year own damage policy with the same insurer (Royal Sundaram).&lt;/p&gt;
+
+&lt;p&gt;When time came to renew the own damage policy, I gathered quotes from the dealership for those insurers with which they had a cashless tie-up at their garages. Then I generated quotes for the same parameters from these insurers&#39; official websites, to gauge the commission the dealership would receive.&lt;/p&gt;
+
+&lt;p&gt;To my surprise, the quotes generated from the official website were on par with or even pricier than the quotes from the dealership. So I went back to the dealership, negotiated the premium down a bit further, and purchased a policy from them.&lt;/p&gt;
+
+&lt;h2 id=&quot;in-closing&quot;&gt;In closing&lt;/h2&gt;
+
+&lt;p&gt;There are two types of car insurance policies - &lt;i&gt;third-party policy&lt;/i&gt; to cover damage caused to someone else, and &lt;i&gt;own damage policy&lt;/i&gt; to cover damage caused to your own car. The rest are add-ons.&lt;/p&gt;
+
+&lt;p&gt;When you encounter the term &lt;strong&gt;&lt;em&gt;zero dep insurance&lt;/em&gt;&lt;/strong&gt;, keep in mind that &lt;strong&gt; zero dep insurance = own damage policy + zero depreciation add-on&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Also, &lt;strong&gt;comprehensive policy = own damage policy (with or without add-ons) + third-party policy&lt;/strong&gt;.&lt;/p&gt;</content>
+      <link href="https://bhoot.dev/2025/car-insurance-primer"/>
+      <summary type="html">With a car comes great expenses. One of those is car insurance. I am a novice car driver and owner. So when time came to renew my car insurance, I found myself drowning in insurancespeak. This post is an attempt to distill my understanding of car insurance for my future self.</summary>
+      <category term="Life maintenance" label="Life maintenance" />
+      <published>2025-12-27T20:58:56.000Z</published>
+    </entry>
+<entry>
       <id>urn:uuid:1e8d8aab-5d8a-4f1c-ad1c-6f94cb1377d1</id>
       <title type="html">Improved font rendering in Guix</title>
       <updated>2025-11-20T18:43:21.000Z</updated>
@@ -1672,7 +1754,7 @@ $ uuidgen | tr &quot;[:upper:]&quot; &quot;[:lower:]&quot;
       <author>
         <name>Jayesh Bhoot</name>
       </author>
-      <content type="html">&lt;div class=&quot;toc&quot;&gt;&lt;h2 id=&quot;table-of-contents&quot;&gt;Table of contents&lt;/h2&gt;&lt;ol class=&quot;toc-1&quot;&gt;&lt;li&gt;&lt;a href=&quot;#table-of-contents&quot;&gt;Table of contents&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#the-problem&quot;&gt;The problem&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#the-solution&quot;&gt;The solution&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#comments&quot;&gt;Comments&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;
+      <content type="html">&lt;div class=&quot;toc&quot;&gt;&lt;h2 id=&quot;table-of-contents&quot;&gt;Table of contents&lt;/h2&gt;&lt;ol class=&quot;toc-1&quot;&gt;&lt;li&gt;&lt;a href=&quot;#table-of-contents&quot;&gt;Table of contents&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#the-problem&quot;&gt;The problem&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#the-solution&quot;&gt;The solution&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;
 
 &lt;p&gt;Tip for Mutual Fund Utilities (MFU) users:&lt;/p&gt;
 
@@ -1791,7 +1873,7 @@ $ uuidgen | tr &quot;[:upper:]&quot; &quot;[:lower:]&quot;
       <author>
         <name>Jayesh Bhoot</name>
       </author>
-      <content type="html">&lt;div class=&quot;toc&quot;&gt;&lt;h2 id=&quot;table-of-contents&quot;&gt;Table of contents&lt;/h2&gt;&lt;ol class=&quot;toc-1&quot;&gt;&lt;li&gt;&lt;a href=&quot;#table-of-contents&quot;&gt;Table of contents&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#configurations-in-build-sbt&quot;&gt;Configurations in &lt;code&gt;build.sbt&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#scoping-a-setting&quot;&gt;Scoping a Setting&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#comments&quot;&gt;Comments&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;
+      <content type="html">&lt;div class=&quot;toc&quot;&gt;&lt;h2 id=&quot;table-of-contents&quot;&gt;Table of contents&lt;/h2&gt;&lt;ol class=&quot;toc-1&quot;&gt;&lt;li&gt;&lt;a href=&quot;#table-of-contents&quot;&gt;Table of contents&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#configurations-in-build-sbt&quot;&gt;Configurations in &lt;code&gt;build.sbt&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#scoping-a-setting&quot;&gt;Scoping a Setting&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;code&gt;src/project&lt;/code&gt; dir contains configuration about SBT - &lt;code&gt;build.properties&lt;/code&gt; to specify sbt version, &lt;code&gt;plugins.sbt&lt;/code&gt; to specify sbt plugins, and so on.&lt;/p&gt;
 
@@ -1832,7 +1914,7 @@ $ uuidgen | tr &quot;[:upper:]&quot; &quot;[:lower:]&quot;
       <author>
         <name>Jayesh Bhoot</name>
       </author>
-      <content type="html">&lt;div class=&quot;toc&quot;&gt;&lt;h2 id=&quot;table-of-contents&quot;&gt;Table of contents&lt;/h2&gt;&lt;ol class=&quot;toc-1&quot;&gt;&lt;li&gt;&lt;a href=&quot;#table-of-contents&quot;&gt;Table of contents&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#infix-construct-operators&quot;&gt;Infix construct operators&lt;/a&gt;&lt;ol class=&quot;toc-2&quot;&gt;&lt;li&gt;&lt;a href=&quot;#immutable-operators&quot;&gt;Immutable operators&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#mutable-operators&quot;&gt;Mutable operators&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#list&quot;&gt;List&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#option&quot;&gt;Option&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#comments&quot;&gt;Comments&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;
+      <content type="html">&lt;div class=&quot;toc&quot;&gt;&lt;h2 id=&quot;table-of-contents&quot;&gt;Table of contents&lt;/h2&gt;&lt;ol class=&quot;toc-1&quot;&gt;&lt;li&gt;&lt;a href=&quot;#table-of-contents&quot;&gt;Table of contents&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#infix-construct-operators&quot;&gt;Infix construct operators&lt;/a&gt;&lt;ol class=&quot;toc-2&quot;&gt;&lt;li&gt;&lt;a href=&quot;#immutable-operators&quot;&gt;Immutable operators&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#mutable-operators&quot;&gt;Mutable operators&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#list&quot;&gt;List&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#option&quot;&gt;Option&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;
 
 &lt;p&gt;Operations on collections can be classified into:&lt;/p&gt;
 
@@ -1904,7 +1986,7 @@ $ uuidgen | tr &quot;[:upper:]&quot; &quot;[:lower:]&quot;
       <author>
         <name>Jayesh Bhoot</name>
       </author>
-      <content type="html">&lt;div class=&quot;toc&quot;&gt;&lt;h2 id=&quot;table-of-contents&quot;&gt;Table of contents&lt;/h2&gt;&lt;ol class=&quot;toc-1&quot;&gt;&lt;li&gt;&lt;a href=&quot;#table-of-contents&quot;&gt;Table of contents&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#problem&quot;&gt;Problem&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#attempt-1&quot;&gt;Attempt 1&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#attempt-2&quot;&gt;Attempt 2&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#tl-dr&quot;&gt;TL;DR&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#conclusion&quot;&gt;Conclusion&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#comments&quot;&gt;Comments&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;
+      <content type="html">&lt;div class=&quot;toc&quot;&gt;&lt;h2 id=&quot;table-of-contents&quot;&gt;Table of contents&lt;/h2&gt;&lt;ol class=&quot;toc-1&quot;&gt;&lt;li&gt;&lt;a href=&quot;#table-of-contents&quot;&gt;Table of contents&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#problem&quot;&gt;Problem&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#attempt-1&quot;&gt;Attempt 1&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#attempt-2&quot;&gt;Attempt 2&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#tl-dr&quot;&gt;TL;DR&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#conclusion&quot;&gt;Conclusion&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;
 
 &lt;p&gt;I am going through the course &lt;a href=&quot;https://www.coursera.org/learn/effective-scala&quot;&gt;Effective Programming in Scala&lt;/a&gt; on Coursera, and ran into build import errors in the very first assignment (fireworks).&lt;/p&gt;
 
@@ -1998,7 +2080,7 @@ sbt.version=1.8.2&lt;/code&gt;&lt;/pre&gt;
       <author>
         <name>Jayesh Bhoot</name>
       </author>
-      <content type="html">&lt;div class=&quot;toc&quot;&gt;&lt;h2 id=&quot;table-of-contents&quot;&gt;Table of contents&lt;/h2&gt;&lt;ol class=&quot;toc-1&quot;&gt;&lt;li&gt;&lt;a href=&quot;#table-of-contents&quot;&gt;Table of contents&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#value--or-data-in-this-context-&quot;&gt;Value (or Data in this context)&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#literal&quot;&gt;Literal&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#-data--type&quot;&gt;(Data) Type&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#expression&quot;&gt;Expression&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#program&quot;&gt;Program&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#another-perspective-on-type&quot;&gt;Another perspective on Type&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#comments&quot;&gt;Comments&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;
+      <content type="html">&lt;div class=&quot;toc&quot;&gt;&lt;h2 id=&quot;table-of-contents&quot;&gt;Table of contents&lt;/h2&gt;&lt;ol class=&quot;toc-1&quot;&gt;&lt;li&gt;&lt;a href=&quot;#table-of-contents&quot;&gt;Table of contents&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#value--or-data-in-this-context-&quot;&gt;Value (or Data in this context)&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#literal&quot;&gt;Literal&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#-data--type&quot;&gt;(Data) Type&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#expression&quot;&gt;Expression&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#program&quot;&gt;Program&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#another-perspective-on-type&quot;&gt;Another perspective on Type&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;value--or-data-in-this-context-&quot;&gt;Value (or Data in this context)&lt;/h2&gt;
 
@@ -2081,7 +2163,7 @@ whose type does not provide such an operation, it&#39;s an error.&lt;/p&gt;</con
       <author>
         <name>Jayesh Bhoot</name>
       </author>
-      <content type="html">&lt;div class=&quot;toc&quot;&gt;&lt;h2 id=&quot;table-of-contents&quot;&gt;Table of contents&lt;/h2&gt;&lt;ol class=&quot;toc-1&quot;&gt;&lt;li&gt;&lt;a href=&quot;#table-of-contents&quot;&gt;Table of contents&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#relevant-background&quot;&gt;Relevant background&lt;/a&gt;&lt;ol class=&quot;toc-2&quot;&gt;&lt;li&gt;&lt;a href=&quot;#package-and-build-tooling&quot;&gt;Package and build tooling&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#editor-service---merlin&quot;&gt;Editor service - &lt;strong&gt;Merlin&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#editor-service---lsp&quot;&gt;Editor service - LSP&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#how-everything-comes-together&quot;&gt;How everything comes together&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#merlin-v-s-ocaml-lsp&quot;&gt;merlin v/s ocaml-lsp&lt;/a&gt;&lt;ol class=&quot;toc-3&quot;&gt;&lt;li&gt;&lt;a href=&quot;#feature-parity&quot;&gt;Feature parity&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#dependency-on-dune&quot;&gt;Dependency on dune&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#speed&quot;&gt;Speed&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#editing-setups&quot;&gt;Editing setups&lt;/a&gt;&lt;ol class=&quot;toc-2&quot;&gt;&lt;li&gt;&lt;a href=&quot;#official--popular-setups&quot;&gt;Official, popular setups&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#unofficial--popular-setups&quot;&gt;Unofficial, popular setups&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#worthy-outliers&quot;&gt;Worthy outliers&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#my-excursions&quot;&gt;My excursions&lt;/a&gt;&lt;ol class=&quot;toc-2&quot;&gt;&lt;li&gt;&lt;a href=&quot;#merlin---emacs&quot;&gt;merlin + emacs&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#merlin---vim&quot;&gt;merlin + vim&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#ocaml-lsp---vscode&quot;&gt;ocaml-lsp + vscode&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#ocaml-lsp---neovim&quot;&gt;ocaml-lsp + neovim&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#ocaml-lsp---helix&quot;&gt;ocaml-lsp + helix&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#conclusion&quot;&gt;Conclusion&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#comments&quot;&gt;Comments&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;
+      <content type="html">&lt;div class=&quot;toc&quot;&gt;&lt;h2 id=&quot;table-of-contents&quot;&gt;Table of contents&lt;/h2&gt;&lt;ol class=&quot;toc-1&quot;&gt;&lt;li&gt;&lt;a href=&quot;#table-of-contents&quot;&gt;Table of contents&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#relevant-background&quot;&gt;Relevant background&lt;/a&gt;&lt;ol class=&quot;toc-2&quot;&gt;&lt;li&gt;&lt;a href=&quot;#package-and-build-tooling&quot;&gt;Package and build tooling&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#editor-service---merlin&quot;&gt;Editor service - &lt;strong&gt;Merlin&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#editor-service---lsp&quot;&gt;Editor service - LSP&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#how-everything-comes-together&quot;&gt;How everything comes together&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#merlin-v-s-ocaml-lsp&quot;&gt;merlin v/s ocaml-lsp&lt;/a&gt;&lt;ol class=&quot;toc-3&quot;&gt;&lt;li&gt;&lt;a href=&quot;#feature-parity&quot;&gt;Feature parity&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#dependency-on-dune&quot;&gt;Dependency on dune&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#speed&quot;&gt;Speed&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#editing-setups&quot;&gt;Editing setups&lt;/a&gt;&lt;ol class=&quot;toc-2&quot;&gt;&lt;li&gt;&lt;a href=&quot;#official--popular-setups&quot;&gt;Official, popular setups&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#unofficial--popular-setups&quot;&gt;Unofficial, popular setups&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#worthy-outliers&quot;&gt;Worthy outliers&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#my-excursions&quot;&gt;My excursions&lt;/a&gt;&lt;ol class=&quot;toc-2&quot;&gt;&lt;li&gt;&lt;a href=&quot;#merlin---emacs&quot;&gt;merlin + emacs&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#merlin---vim&quot;&gt;merlin + vim&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#ocaml-lsp---vscode&quot;&gt;ocaml-lsp + vscode&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#ocaml-lsp---neovim&quot;&gt;ocaml-lsp + neovim&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#ocaml-lsp---helix&quot;&gt;ocaml-lsp + helix&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#conclusion&quot;&gt;Conclusion&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;relevant-background&quot;&gt;Relevant background&lt;/h2&gt;
 
@@ -2302,7 +2384,7 @@ Press ENTER or type command to continue&lt;/code&gt;&lt;/pre&gt;
       <author>
         <name>Jayesh Bhoot</name>
       </author>
-      <content type="html">&lt;div class=&quot;toc&quot;&gt;&lt;h2 id=&quot;table-of-contents&quot;&gt;Table of contents&lt;/h2&gt;&lt;ol class=&quot;toc-1&quot;&gt;&lt;li&gt;&lt;a href=&quot;#table-of-contents&quot;&gt;Table of contents&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#update--5-may-2024&quot;&gt;Update: 5 May 2024&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#original-article&quot;&gt;Original article&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#comments&quot;&gt;Comments&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;
+      <content type="html">&lt;div class=&quot;toc&quot;&gt;&lt;h2 id=&quot;table-of-contents&quot;&gt;Table of contents&lt;/h2&gt;&lt;ol class=&quot;toc-1&quot;&gt;&lt;li&gt;&lt;a href=&quot;#table-of-contents&quot;&gt;Table of contents&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#update--5-may-2024&quot;&gt;Update: 5 May 2024&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#original-article&quot;&gt;Original article&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;update--5-may-2024&quot;&gt;Update: 5 May 2024&lt;/h2&gt;
 
@@ -2350,7 +2432,7 @@ Press ENTER or type command to continue&lt;/code&gt;&lt;/pre&gt;
       <author>
         <name>Jayesh Bhoot</name>
       </author>
-      <content type="html">&lt;div class=&quot;toc&quot;&gt;&lt;h2 id=&quot;table-of-contents&quot;&gt;Table of contents&lt;/h2&gt;&lt;ol class=&quot;toc-1&quot;&gt;&lt;li&gt;&lt;a href=&quot;#table-of-contents&quot;&gt;Table of contents&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#local-switch-in-opam&quot;&gt;Local switch in opam&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#dune-init-project&quot;&gt;dune init project&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#the-problem&quot;&gt;The problem&lt;/a&gt;&lt;ol class=&quot;toc-2&quot;&gt;&lt;li&gt;&lt;a href=&quot;#attempt-1&quot;&gt;Attempt 1&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#attempt-2&quot;&gt;Attempt 2&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#solution&quot;&gt;Solution&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#what-next-&quot;&gt;What next?&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#comments&quot;&gt;Comments&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;
+      <content type="html">&lt;div class=&quot;toc&quot;&gt;&lt;h2 id=&quot;table-of-contents&quot;&gt;Table of contents&lt;/h2&gt;&lt;ol class=&quot;toc-1&quot;&gt;&lt;li&gt;&lt;a href=&quot;#table-of-contents&quot;&gt;Table of contents&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#local-switch-in-opam&quot;&gt;Local switch in opam&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#dune-init-project&quot;&gt;dune init project&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#the-problem&quot;&gt;The problem&lt;/a&gt;&lt;ol class=&quot;toc-2&quot;&gt;&lt;li&gt;&lt;a href=&quot;#attempt-1&quot;&gt;Attempt 1&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#attempt-2&quot;&gt;Attempt 2&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#solution&quot;&gt;Solution&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#what-next-&quot;&gt;What next?&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;
 
 &lt;p&gt;In the OCaml ecosystem, opam is the most popular package management tool, while dune is the foremost build tool.&lt;/p&gt;
 
@@ -2545,7 +2627,7 @@ wrap dune around opam, thus making dune as the unifying package management and b
       <author>
         <name>Jayesh Bhoot</name>
       </author>
-      <content type="html">&lt;div class=&quot;toc&quot;&gt;&lt;h2 id=&quot;table-of-contents&quot;&gt;Table of contents&lt;/h2&gt;&lt;ol class=&quot;toc-1&quot;&gt;&lt;li&gt;&lt;a href=&quot;#table-of-contents&quot;&gt;Table of contents&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#problem&quot;&gt;Problem&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#hacky-solution&quot;&gt;Hacky solution&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#update--23-feb-2024----better-solution&quot;&gt;Update (&lt;time datetime=&quot;2024-02-23&quot;&gt;23 Feb 2024&lt;/time&gt;) : Better solution&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#comments&quot;&gt;Comments&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;
+      <content type="html">&lt;div class=&quot;toc&quot;&gt;&lt;h2 id=&quot;table-of-contents&quot;&gt;Table of contents&lt;/h2&gt;&lt;ol class=&quot;toc-1&quot;&gt;&lt;li&gt;&lt;a href=&quot;#table-of-contents&quot;&gt;Table of contents&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#problem&quot;&gt;Problem&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#hacky-solution&quot;&gt;Hacky solution&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#update--23-feb-2024----better-solution&quot;&gt;Update (&lt;time datetime=&quot;2024-02-23&quot;&gt;23 Feb 2024&lt;/time&gt;) : Better solution&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;problem&quot;&gt;Problem&lt;/h2&gt;
 
@@ -3054,7 +3136,7 @@ Click&lt;/i&gt;.</summary>
       <author>
         <name>Jayesh Bhoot</name>
       </author>
-      <content type="html">&lt;div class=&quot;toc&quot;&gt;&lt;h2 id=&quot;table-of-contents&quot;&gt;Table of contents&lt;/h2&gt;&lt;ol class=&quot;toc-1&quot;&gt;&lt;li&gt;&lt;a href=&quot;#table-of-contents&quot;&gt;Table of contents&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#org9a73bf2&quot;&gt;Project Layout&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#org4352a07&quot;&gt;ClojureScript to JavaScript&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#org9d85caf&quot;&gt;Live reload&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#comments&quot;&gt;Comments&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;
+      <content type="html">&lt;div class=&quot;toc&quot;&gt;&lt;h2 id=&quot;table-of-contents&quot;&gt;Table of contents&lt;/h2&gt;&lt;ol class=&quot;toc-1&quot;&gt;&lt;li&gt;&lt;a href=&quot;#table-of-contents&quot;&gt;Table of contents&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#org9a73bf2&quot;&gt;Project Layout&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#org4352a07&quot;&gt;ClojureScript to JavaScript&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#org9d85caf&quot;&gt;Live reload&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;
 
 &lt;p&gt;
 You can find a sample add-on on my &lt;a href=&quot;https://github.com/jayesh-bhoot/firefox-add-on-in-cljs&quot;&gt;GitHub&lt;/a&gt;.
