@@ -2,7 +2,7 @@ stages:
 - build
 - deploy
 
-build:
+buildd:
   echo "Building"
 
 deploy:
