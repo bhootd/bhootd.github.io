@@ -2,8 +2,12 @@ stages:
 - build
 - deploy
 
-buildd:
-  echo "Building"
+build:
+  stage: build
+  script:
+  - echo "Building"
 
 deploy:
-  echo "Deploying"
+  stage: deploy
+  script:
+  - echo "Deploying"
