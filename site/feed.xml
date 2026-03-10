@@ -2,12 +2,68 @@
     <feed xmlns="http://www.w3.org/2005/Atom">
       <id>https://bhoot.dev/</id>
       <title>Jayesh Bhoot's Ghost Town – All Posts</title>
-      <updated>2025-12-27T20:58:56.000Z</updated>
+      <updated>2026-03-10T02:53:56.000Z</updated>
       <author>
         <name>Jayesh Bhoot</name>
       </author>
       <link href="https://bhoot.dev/feed.xml" rel="self"/>
       <entry>
+      <id>urn:uuid:f11a08e7-1b45-457c-9a5f-c213095a1965</id>
+      <title type="html">My understanding of SBI Max Gain loan account</title>
+      <updated>2026-03-10T02:53:56.000Z</updated>
+      <author>
+        <name>Jayesh Bhoot</name>
+      </author>
+      <content type="html">&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: This is my rudimentary, superficial, not-yet-verified understanding of SBI Max Gain account. &lt;strong&gt;Please verify with a qualified person (like an SBI branch manager) before making a financial decision.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Some banks in India offer a loan overdraft facility, where your loan account is also an overdraft account. You can park extra funds in it, which, while earning zero interest, would reduce the principal of the loan during interest calculation.&lt;/p&gt; 
+
+&lt;p&gt;SBI Max Gain account is such a facility from State Bank of India. I have this account for my home loan.&lt;/p&gt;
+
+&lt;p&gt;After getting stumped for a long time by a mismatch between my finance sheet and the available balance shown in my Max Gain account, I sat down to understand it. In the process, I noticed a nuance, which when discovered, seemed like a given.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;The basic rule is this: For a Max Gain account, any reduction effected in the principal amount of the loan, apart from the one effected according to the amortised schedule, is temporary and withdrawable.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt; Let&#39;s see how this plays out in different scenarios.&lt;/p&gt;
+
+&lt;h2&gt; EMI payments &lt;/h2&gt;
+
+&lt;p&gt;Keeping in mind the unpredictability of the floating interest rate, I have set up my monthly payments to be higher than the scheduled EMIs.&lt;/p&gt;
+
+&lt;p&gt;In a normal loan, such a payment would be split into: pre-calculated interest of that month; pre-calculated principal amount for that month; and excess goes to principal payment. The third component reduces the total principal amount faster than the amortized schedule would.&lt;/p&gt;
+
+&lt;p&gt;In SBI Max Gain, the treatment is similar, but with a slight twist: the excess goes to the overdraft account, where it reduces the principal amount of the loan for the time it sits there, and is also withdrawable.&lt;/p&gt;
+
+&lt;h2&gt; Part payments or pre-payments &lt;/h2&gt;
+
+&lt;p&gt;Another way to reduce principal amount is to make explicit part payments. There is a general tendency to pay back a loan as fast as affordable. Part payment is the main tool for it, where you repeatedly, as and when convenient, pay back the principal amount ahead of the amortised schedule.&lt;/p&gt;
+
+&lt;p&gt;In a normal loan, while a part-payment permanently reduces the principal amount by that amount, you also part with that amount permanently.&lt;/p&gt;
+&lt;p&gt;In Max Gain, a part-payment is just depositing whatever lumpsum you have in the overdraft account. The principal amount of the loan is reduced only for the time it sits there. There is no permanent reduction of the principal amount other than what the amortised schedule effects. But that amount also remains available to you.&lt;/p&gt;
+
+&lt;p&gt;Now imagine that over the years, for a normal loan of 50 lakhs, the part payments have amounted to 30 lakhs. In Max Gain, those 30 lakhs basically sit in the overdraft account, still usable for other purposes.&lt;/p&gt;
+
+&lt;p&gt;One might think it an idiocy to just let 30 lakhs stew in a zero-interest earning bank account. Why not invest them? First, disposable income would already be responsibly and proportionately split between investments and part payments, thus taking care of investments beforehand. Second, in case of the normal loan, the part payment amount is permanently gone. At least its still available in case of Max Gain.&lt;/p&gt; 
+
+&lt;h2&gt; There is a catch &lt;/h2&gt;
+
+&lt;p&gt;My bank branch told me that there is a cap on the amount that would reduce the principal of the loan. So if the principal is 50 lakhs, then that cap could be around 30 lakhs. Overdraft balance beyond 30 lakhs don&#39;t reduce the loan principal. Its best to inquire with the branch manager.&lt;/p&gt;
+
+&lt;h2&gt; Foreclosing a loan &lt;/h2&gt;
+
+&lt;p&gt;While I haven&#39;t yet verified it with the bank, I imagine I would accummulate the part-payments in the overdraft account until its equal to the outstanding principal amount, then just hand over the overdraft funds to the bank for foreclosure.&lt;/p&gt;
+
+&lt;h2&gt; In closing &lt;/h2&gt;
+
+&lt;p&gt;I believe I have made good use of the account so far. I keep a few of my funds parked there - emergency fund; periodic expenses (non-monthly) fund; one-off expenses (large expense, vacation, etc.) fund.&lt;/p&gt;
+
+&lt;p&gt;I have only just wrapped my head around the nature of part-payments in Max Gain. Once I become comfortable with the idea, I might even employ it.&lt;/p&gt;</content>
+      <link href="https://bhoot.dev/2026/sbi-max-gain"/>
+      <summary type="html">When the overdraft balance and the principal amount balance of my Max Gain account no longer matched the expected numbers, I decided to dig into the nature of the SBI Max Gain account.</summary>
+      <category term="Life maintenance" label="Life maintenance" />
+      <published>2026-03-10T02:53:56.000Z</published>
+    </entry>
+<entry>
       <id>urn:uuid:859a810b-58bc-47b2-a8f2-f3d8a5a87574</id>
       <title type="html">A primer on car insurance (in India)</title>
       <updated>2025-12-27T20:58:56.000Z</updated>

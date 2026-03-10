@@ -9,6 +9,6 @@
     "typescript": "^5.8.2"
   },
   "scripts": {
-    "atom-feed": "node --experimental-strip-types ./scripts/atom-feed.ts"
+    "generate-atom-feed": "node --experimental-strip-types ./scripts/atom-feed.ts"
   }
 }
